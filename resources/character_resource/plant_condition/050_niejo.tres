@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ResourcePlantConditionNiejo" format=3 uid="uid://upfj8kxqduxh"]
+
+[ext_resource type="Script" uid="uid://papwojmcoiwb" path="res://scripts/resources/plant_condition/condition_050_niejo.gd" id="1_jpkm2"]
+
+[resource]
+script = ExtResource("1_jpkm2")
+place_plant_in_cell = 3
+is_special_plants = true
+metadata/_custom_type_script = "uid://papwojmcoiwb"

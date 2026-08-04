@@ -57,6 +57,8 @@ var fog_is_static := false:
 
 var plant_be_shovel_front := true
 var open_all_level := false
+## 卡片无冷却（作弊选项）
+var no_card_cooldown := false
 
 ##追踪子弹无目标时跟随标
 var track_bullet_mouse := false:
@@ -97,6 +99,7 @@ func load_and_apply_config() -> void:
 	fog_is_static = config.get_value("user_control", "fog_is_static", false)
 	plant_be_shovel_front = config.get_value("user_control", "plant_be_shovel_front", true)
 	open_all_level = config.get_value("user_control", "open_all_level", false)
+	no_card_cooldown = config.get_value("user_control", "no_card_cooldown", false)
 	track_bullet_mouse = config.get_value("user_control", "track_bullet_mouse", false)
 
 	EventBus.push_event("on_config_update")
@@ -123,6 +126,7 @@ func save_config() -> void:
 	config.set_value("user_control", "fog_is_static", fog_is_static)
 	config.set_value("user_control", "plant_be_shovel_front", plant_be_shovel_front)
 	config.set_value("user_control", "open_all_level", open_all_level)
+	config.set_value("user_control", "no_card_cooldown", no_card_cooldown)
 	config.set_value("user_control", "track_bullet_mouse", track_bullet_mouse)
 
 	config.save(path)

@@ -109,6 +109,11 @@ func card_not_can_click():
 
 ## 卡片开始冷却
 func card_cool():
+	# Cheat: no_card_cooldown ON = deretso ready ulit, walang cooldown
+	if Global.config_service.no_card_cooldown:
+		set_card_cool_end()
+		card_ready()
+		return
 	_is_cooling = true
 	_cool_mask.visible = true
 	_cool_timer = cool_time

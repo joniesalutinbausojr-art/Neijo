@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bjdufdnu8jj62"]
+[gd_scene format=3 uid="uid://bjdufdnu8jj62"]
 
 [ext_resource type="PackedScene" uid="uid://c5cke4cm02um7" path="res://scenes/character/plant/plant_000_base.tscn" id="1_rscpg"]
 [ext_resource type="Texture2D" uid="uid://osds5r8hvsmb" path="res://assets/reanim/Wallnut_body.png" id="2_1opod"]

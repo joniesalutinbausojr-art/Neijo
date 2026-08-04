@@ -139,6 +139,10 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 text = "bullets follow the mouse"
 
+[node name="CheckBox12" type="CheckBox" parent="OptionBG/HBoxContainer/VBoxContainer2" unique_id=1320522598]
+layout_mode = 2
+text = "Cards No Cooldown"
+
 [node name="TextureButton" type="TextureButton" parent="OptionBG" unique_id=830961050]
 layout_mode = 1
 anchors_preset = 3
@@ -191,4 +195,5 @@ vertical_alignment = 1
 [connection signal="toggled" from="OptionBG/HBoxContainer/VBoxContainer2/CheckBox9" to="." method="_on_check_box_9_toggled"]
 [connection signal="toggled" from="OptionBG/HBoxContainer/VBoxContainer2/CheckBox10" to="." method="_on_check_box_10_toggled"]
 [connection signal="toggled" from="OptionBG/HBoxContainer/VBoxContainer2/CheckBox11" to="." method="_on_check_box_11_toggled"]
+[connection signal="toggled" from="OptionBG/HBoxContainer/VBoxContainer2/CheckBox12" to="." method="_on_check_box_12_toggled"]
 [connection signal="pressed" from="OptionBG/TextureButton" to="." method="_on_texture_button_pressed"]

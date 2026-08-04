@@ -73,6 +73,7 @@ enum PlantType {
 	P048CobCannon,
 
 	P049PeaShooterDoubleReverse,
+	P050Niejo,
 
 	## 模仿者
 	P999Imitater = 999,
@@ -540,6 +541,13 @@ const PlantInfo = {
 		PlantInfoAttribute.PlantConditionResource : preload("res://resources/character_resource/plant_condition/000_common_plant_land.tres"),
 		PlantInfoAttribute.PlantScenes : preload("res://scenes/character/plant/plant_049_pea_shooter_double_reverse.tscn")
 		},
+	PlantType.P050Niejo: {
+	PlantInfoAttribute.PlantName: "Niejo",
+	PlantInfoAttribute.CoolTime: 7.5,
+	PlantInfoAttribute.SunCost: 100,
+	PlantInfoAttribute.PlantConditionResource: preload("res://resources/character_resource/plant_condition/050_niejo.tres"),
+	PlantInfoAttribute.PlantScenes: preload("res://scenes/character/plant/plant_050_niejo.tscn")
+},
 
 	## 模仿者
 	PlantType.P999Imitater:{

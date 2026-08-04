@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://cotei5abo6w6a"]
+
+[ext_resource type="PackedScene" uid="uid://c5cke4cm02um7" path="res://scenes/character/plant/plant_000_base.tscn" id="1_q3no6"]
+[ext_resource type="Script" uid="uid://d0so8o2ut886q" path="res://scripts/character/plant/plant_050_niejo.gd" id="2_q3no6"]
+[ext_resource type="Texture2D" uid="uid://osds5r8hvsmb" path="res://assets/reanim/Wallnut_body.png" id="3_h027w"]
+[ext_resource type="Texture2D" uid="uid://cpbkvykx6yq07" path="res://assets/reanim/Wallnut_twitch.png" id="4_vqtpa"]
+[ext_resource type="Texture2D" uid="uid://co3e8k6uwm4hi" path="res://assets/reanim/Wallnut_blink1.png" id="5_eckrm"]
+[ext_resource type="Script" uid="uid://jl0nl4a234bc" path="res://scripts/resources/resource_body_change.gd" id="6_7p2oy"]
+[ext_resource type="Texture2D" uid="uid://cku5wd5qvdq7m" path="res://assets/reanim/Wallnut_blink2.png" id="7_j2jp2"]
+[ext_resource type="Animation" uid="uid://ctdx2rncxsv0k" path="res://animation/character/plant/004_wall_nut/Wallnut_face.tres" id="8_cahs2"]
+[ext_resource type="Animation" uid="uid://dfpy14jrvk1md" path="res://animation/character/plant/004_wall_nut/Wallnut_idle.tres" id="9_1uq6u"]
+[ext_resource type="Script" uid="uid://4o1wtnifn4tq" path="res://scripts/character/components/hp_component/component_hp_stage_change.gd" id="10_mjemo"]
+[ext_resource type="Texture2D" uid="uid://d06vgaisnbd0n" path="res://assets/reanim/Wallnut_cracked1.png" id="11_rc6ic"]
+[ext_resource type="Texture2D" uid="uid://bms4xhmhlcsam" path="res://assets/reanim/Wallnut_cracked2.png" id="12_fxeh7"]
+
+[sub_resource type="Resource" id="Resource_gq356"]
+script = ExtResource("6_7p2oy")
+sprite_change = Array[NodePath]([NodePath("../Body/BodyCorrect/Anim_blink_twice")])
+sprite_change_texture = Array[Texture2D]([ExtResource("5_eckrm"), ExtResource("7_j2jp2")])
+metadata/_custom_type_script = "uid://jl0nl4a234bc"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w5ly5"]
+_data = {
+&"Wallnut_face": ExtResource("8_cahs2"),
+&"Wallnut_idle": ExtResource("9_1uq6u")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tx35c"]
+animation = &"Wallnut_face"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w5ly5"]
+animation = &"Wallnut_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_esarn"]
+advance_mode = 2
+advance_expression = "is_face"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kqxfl"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_63m75"]
+states/Start/position = Vector2(150, 74)
+states/Wallnut_face/node = SubResource("AnimationNodeAnimation_tx35c")
+states/Wallnut_face/position = Vector2(625, 100)
+states/Wallnut_idle/node = SubResource("AnimationNodeAnimation_w5ly5")
+states/Wallnut_idle/position = Vector2(389, 100)
+transitions = ["Wallnut_idle", "Wallnut_face", SubResource("AnimationNodeStateMachineTransition_esarn"), "Start", "Wallnut_idle", SubResource("AnimationNodeStateMachineTransition_kqxfl")]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_r0k88"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_hev76"]
+nodes/output/position = Vector2(900, 120)
+nodes/AnimationNodeStateMachine/node = SubResource("AnimationNodeStateMachine_63m75")
+nodes/AnimationNodeStateMachine/position = Vector2(260, 100)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_r0k88")
+nodes/TimeScale/position = Vector2(600, 100)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"AnimationNodeStateMachine"]
+
+[sub_resource type="Resource" id="Resource_hev76"]
+script = ExtResource("6_7p2oy")
+sprite_change = Array[NodePath]([NodePath("../Body/BodyCorrect/Anim_face")])
+sprite_change_texture = Array[Texture2D]([ExtResource("11_rc6ic")])
+metadata/_custom_type_script = "uid://jl0nl4a234bc"
+
+[sub_resource type="Resource" id="Resource_akyvq"]
+script = ExtResource("6_7p2oy")
+sprite_change = Array[NodePath]([NodePath("../Body/BodyCorrect/Anim_face")])
+sprite_change_texture = Array[Texture2D]([ExtResource("12_fxeh7")])
+metadata/_custom_type_script = "uid://jl0nl4a234bc"
+
+[node name="Plant050Niejo" unique_id=224325203 instance=ExtResource("1_q3no6")]
+script = ExtResource("2_q3no6")
+process_time = 2.5
+reward_plant_type = 3
+plant_type = 50
+is_can_ladder = true
+
+[node name="Shadow" parent="." index="0"]
+position = Vector2(0, -5)
+
+[node name="BodyCorrect" parent="Body" index="0"]
+unique_name_in_owner = true
+position = Vector2(-43, -69)
+
+[node name="_ground" type="Sprite2D" parent="Body/BodyCorrect" index="0" unique_id=827661629]
+centered = false
+
+[node name="Anim_idle" type="Sprite2D" parent="Body/BodyCorrect" index="1" unique_id=1951770121]
+centered = false
+
+[node name="Anim_face" type="Sprite2D" parent="Body/BodyCorrect" index="2" unique_id=152162843]
+position = Vector2(4.9389234, 6.577111)
+rotation = -0.02848517
+scale = Vector2(0.7, 0.6996793)
+skew = 0.0005065116
+texture = ExtResource("3_h027w")
+centered = false
+
+[node name="Anim_blink_twitch" type="Sprite2D" parent="Body/BodyCorrect" index="3" unique_id=42261445]
+visible = false
+position = Vector2(28.054956, 36.40153)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_vqtpa")
+centered = false
+
+[node name="Anim_blink_twice" type="Sprite2D" parent="Body/BodyCorrect" index="4" unique_id=1947084584]
+visible = false
+position = Vector2(26.854956, 22.401531)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_eckrm")
+centered = false
+
+[node name="HpComponent" parent="." index="3"]
+max_hp = 4000
+
+[node name="BlinkComponent" parent="." index="5"]
+all_blink_body_change = Array[ExtResource("6_7p2oy")]([SubResource("Resource_gq356")])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8" unique_id=989437954]
+libraries/ = SubResource("AnimationLibrary_w5ly5")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="9" unique_id=633329466]
+deterministic = false
+tree_root = SubResource("AnimationNodeBlendTree_hev76")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
+parameters/TimeScale/scale = 1.0
+
+[node name="HpStageChangeComponent" type="Node2D" parent="." index="10" unique_id=1709842757]
+script = ExtResource("10_mjemo")
+boundary_value_hp = Array[int]([2666, 1333, 0])
+body_change = Array[ExtResource("6_7p2oy")]([SubResource("Resource_hev76"), SubResource("Resource_akyvq"), null])

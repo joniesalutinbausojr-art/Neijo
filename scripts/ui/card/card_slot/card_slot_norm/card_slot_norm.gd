@@ -219,4 +219,3 @@ func move_card_slot_battle(is_appeal:bool, appeal_time:= 0.2):
 	else:
 		tween.tween_property(card_slot_battle, "position",Vector2(0, -100.0), appeal_time)
 	await tween.finished
-

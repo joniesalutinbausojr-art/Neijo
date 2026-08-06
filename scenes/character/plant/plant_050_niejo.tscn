@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://c5cke4cm02um7" path="res://scenes/character/plant/plant_000_base.tscn" id="1_q3no6"]
 [ext_resource type="Script" uid="uid://d0so8o2ut886q" path="res://scripts/character/plant/plant_050_niejo.gd" id="2_q3no6"]
-[ext_resource type="Texture2D" uid="uid://osds5r8hvsmb" path="res://assets/reanim/Wallnut_body.png" id="3_h027w"]
-[ext_resource type="Texture2D" uid="uid://cpbkvykx6yq07" path="res://assets/reanim/Wallnut_twitch.png" id="4_vqtpa"]
-[ext_resource type="Texture2D" uid="uid://co3e8k6uwm4hi" path="res://assets/reanim/Wallnut_blink1.png" id="5_eckrm"]
+[ext_resource type="Texture2D" uid="uid://mu8djv10m2yo" path="res://assets/reanim/NiejoFace.png" id="3_ue0w1"]
+[ext_resource type="Texture2D" uid="uid://ddx4g2xkbkq8b" path="res://assets/reanim/NiejoHat.png" id="4_h027w"]
+[ext_resource type="Texture2D" uid="uid://dcmkqbpah51bs" path="res://assets/reanim/NiejoBlink1.png" id="5_q3no6"]
 [ext_resource type="Script" uid="uid://jl0nl4a234bc" path="res://scripts/resources/resource_body_change.gd" id="6_7p2oy"]
-[ext_resource type="Texture2D" uid="uid://cku5wd5qvdq7m" path="res://assets/reanim/Wallnut_blink2.png" id="7_j2jp2"]
-[ext_resource type="Animation" uid="uid://ctdx2rncxsv0k" path="res://animation/character/plant/004_wall_nut/Wallnut_face.tres" id="8_cahs2"]
-[ext_resource type="Animation" uid="uid://dfpy14jrvk1md" path="res://animation/character/plant/004_wall_nut/Wallnut_idle.tres" id="9_1uq6u"]
+[ext_resource type="Texture2D" uid="uid://b0hj1isdrirsi" path="res://assets/reanim/NiejoBlink2.png" id="7_ue0w1"]
+[ext_resource type="Animation" uid="uid://sokgnxxulswo" path="res://animation/character/plant/050_niejo/Niejo_face.tres" id="8_q3no6"]
+[ext_resource type="Animation" uid="uid://b8eyerpyeune4" path="res://animation/character/plant/050_niejo/Niejo_idle.tres" id="9_ue0w1"]
 [ext_resource type="Script" uid="uid://4o1wtnifn4tq" path="res://scripts/character/components/hp_component/component_hp_stage_change.gd" id="10_mjemo"]
 [ext_resource type="Texture2D" uid="uid://d06vgaisnbd0n" path="res://assets/reanim/Wallnut_cracked1.png" id="11_rc6ic"]
 [ext_resource type="Texture2D" uid="uid://bms4xhmhlcsam" path="res://assets/reanim/Wallnut_cracked2.png" id="12_fxeh7"]
@@ -16,20 +16,273 @@
 [sub_resource type="Resource" id="Resource_gq356"]
 script = ExtResource("6_7p2oy")
 sprite_change = Array[NodePath]([NodePath("../Body/BodyCorrect/Anim_blink_twice")])
-sprite_change_texture = Array[Texture2D]([ExtResource("5_eckrm"), ExtResource("7_j2jp2")])
+sprite_change_texture = Array[Texture2D]([ExtResource("5_q3no6"), ExtResource("7_ue0w1")])
 metadata/_custom_type_script = "uid://jl0nl4a234bc"
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_w5ly5"]
+[sub_resource type="Animation" id="Animation_h027w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/BodyCorrect/Niejo_idle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_ue0w1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/BodyCorrect/Niejo_idle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-4.000002, -3.8146973e-06)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/BodyCorrect/Niejo_idle:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/BodyCorrect/Niejo_idle:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.05, 0.05)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/BodyCorrect/Niejo_idle:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/BodyCorrect/Anim_hat:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_h027w")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/BodyCorrect/Anim_hat:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2.0000014, -19.999998)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body/BodyCorrect/Anim_hat:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.28318]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body/BodyCorrect/Anim_hat:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.04, 0.04)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Body/BodyCorrect/Anim_hat:skew")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2e-07]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vqtpa"]
 _data = {
-&"Wallnut_face": ExtResource("8_cahs2"),
-&"Wallnut_idle": ExtResource("9_1uq6u")
+&"RESET": SubResource("Animation_h027w")
+}
+
+[sub_resource type="Animation" id="Animation_eckrm"]
+resource_name = "Niejo_process"
+step = 0.083333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/BodyCorrect/Niejo_idle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.083333336, 0.5, 1.0833334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_ue0w1"), ExtResource("3_ue0w1"), ExtResource("3_ue0w1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/BodyCorrect/Niejo_idle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-4.000002, -3.8146973e-06), Vector2(-4.000002, -9.000004), Vector2(-4.000002, -3.8146973e-06)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/BodyCorrect/Niejo_idle:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/BodyCorrect/Niejo_idle:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.05, 0.05), Vector2(0.05, 0.054500002), Vector2(0.05, 0.05)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/BodyCorrect/Niejo_idle:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/BodyCorrect/Anim_hat:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_h027w"), ExtResource("4_h027w"), ExtResource("4_h027w")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/BodyCorrect/Anim_hat:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-2.0000014, -19.999998), Vector2(-29.000002, -26), Vector2(-2.0000014, -19.999998)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body/BodyCorrect/Anim_hat:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [6.28318, 5.986471, 6.28318]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body/BodyCorrect/Anim_hat:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.04, 0.04), Vector2(0.04, 0.04), Vector2(0.04, 0.04)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Body/BodyCorrect/Anim_hat:skew")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2e-07, 2e-07]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rn766"]
+_data = {
+&"Niejo_face": ExtResource("8_q3no6"),
+&"Niejo_idle": ExtResource("9_ue0w1"),
+&"Niejo_process": SubResource("Animation_eckrm")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tx35c"]
-animation = &"Wallnut_face"
+animation = &"Global/Niejo_face"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w5ly5"]
-animation = &"Wallnut_idle"
+animation = &"Global/Niejo_idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_esarn"]
 advance_mode = 2
@@ -39,16 +292,18 @@ advance_expression = "is_face"
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_63m75"]
+states/Niejo_face/node = SubResource("AnimationNodeAnimation_tx35c")
+states/Niejo_face/position = Vector2(625, 100)
+states/Niejo_idle/node = SubResource("AnimationNodeAnimation_w5ly5")
+states/Niejo_idle/position = Vector2(389, 100)
 states/Start/position = Vector2(150, 74)
-states/Wallnut_face/node = SubResource("AnimationNodeAnimation_tx35c")
-states/Wallnut_face/position = Vector2(625, 100)
-states/Wallnut_idle/node = SubResource("AnimationNodeAnimation_w5ly5")
-states/Wallnut_idle/position = Vector2(389, 100)
-transitions = ["Wallnut_idle", "Wallnut_face", SubResource("AnimationNodeStateMachineTransition_esarn"), "Start", "Wallnut_idle", SubResource("AnimationNodeStateMachineTransition_kqxfl")]
+transitions = ["Niejo_idle", "Niejo_face", SubResource("AnimationNodeStateMachineTransition_esarn"), "Start", "Niejo_idle", SubResource("AnimationNodeStateMachineTransition_kqxfl")]
+graph_offset = Vector2(146.55702, -35.80186)
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_r0k88"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_hev76"]
+graph_offset = Vector2(78.05973, 30.95622)
 nodes/output/position = Vector2(900, 120)
 nodes/AnimationNodeStateMachine/node = SubResource("AnimationNodeStateMachine_63m75")
 nodes/AnimationNodeStateMachine/position = Vector2(260, 100)
@@ -58,22 +313,21 @@ node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"AnimationNode
 
 [sub_resource type="Resource" id="Resource_hev76"]
 script = ExtResource("6_7p2oy")
-sprite_change = Array[NodePath]([NodePath("../Body/BodyCorrect/Anim_face")])
+sprite_change = Array[NodePath]([NodePath("../Body/BodyCorrect/Niejo_face")])
 sprite_change_texture = Array[Texture2D]([ExtResource("11_rc6ic")])
 metadata/_custom_type_script = "uid://jl0nl4a234bc"
 
 [sub_resource type="Resource" id="Resource_akyvq"]
 script = ExtResource("6_7p2oy")
-sprite_change = Array[NodePath]([NodePath("../Body/BodyCorrect/Anim_face")])
+sprite_change = Array[NodePath]([NodePath("../Body/BodyCorrect/Niejo_face")])
 sprite_change_texture = Array[Texture2D]([ExtResource("12_fxeh7")])
 metadata/_custom_type_script = "uid://jl0nl4a234bc"
 
 [node name="Plant050Niejo" unique_id=224325203 instance=ExtResource("1_q3no6")]
 script = ExtResource("2_q3no6")
-process_time = 2.5
-reward_plant_type = 3
+process_time = 1.0
+fail_wait_time = 10.0
 plant_type = 50
-is_can_ladder = true
 
 [node name="Shadow" parent="." index="0"]
 position = Vector2(0, -5)
@@ -82,42 +336,63 @@ position = Vector2(0, -5)
 unique_name_in_owner = true
 position = Vector2(-43, -69)
 
-[node name="_ground" type="Sprite2D" parent="Body/BodyCorrect" index="0" unique_id=827661629]
+[node name="Niejo_idle" type="Sprite2D" parent="Body/BodyCorrect" index="0" unique_id=1951770121]
+position = Vector2(-4.000002, -3.8146973e-06)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_ue0w1")
 centered = false
 
-[node name="Anim_idle" type="Sprite2D" parent="Body/BodyCorrect" index="1" unique_id=1951770121]
+[node name="Niejo_face" type="Sprite2D" parent="Body/BodyCorrect" index="1" unique_id=152162843]
+position = Vector2(-4.000002, 1.4305115e-06)
+rotation = 6.28318
+scale = Vector2(0.05, 0.051)
 centered = false
 
-[node name="Anim_face" type="Sprite2D" parent="Body/BodyCorrect" index="2" unique_id=152162843]
-position = Vector2(4.9389234, 6.577111)
-rotation = -0.02848517
-scale = Vector2(0.7, 0.6996793)
-skew = 0.0005065116
-texture = ExtResource("3_h027w")
+[node name="Anim_hat" type="Sprite2D" parent="Body/BodyCorrect" index="2" unique_id=1900493003]
+position = Vector2(-2.0000014, -19.999998)
+rotation = 6.28318
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("4_h027w")
 centered = false
 
-[node name="Anim_blink_twitch" type="Sprite2D" parent="Body/BodyCorrect" index="3" unique_id=42261445]
+[node name="Anim_blink_twice" type="Sprite2D" parent="Body/BodyCorrect" index="3" unique_id=1947084584]
 visible = false
-position = Vector2(28.054956, 36.40153)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("4_vqtpa")
+position = Vector2(9, 4.000002)
+scale = Vector2(0.037499998, 0.04)
+texture = ExtResource("5_q3no6")
 centered = false
 
-[node name="Anim_blink_twice" type="Sprite2D" parent="Body/BodyCorrect" index="4" unique_id=1947084584]
+[node name="HpControl" parent="HpComponent" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBarHp" parent="HpComponent/HpControl" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelHp" parent="HpComponent/HpControl" index="1"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Zzz" parent="SleepComponent/Body" index="0"]
 visible = false
-position = Vector2(26.854956, 22.401531)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("5_eckrm")
-centered = false
+modulate = Color(1, 1, 1, 0.243137)
+position = Vector2(18.8516, -20.3193)
 
-[node name="HpComponent" parent="." index="3"]
-max_hp = 4000
+[node name="Zzz2" parent="SleepComponent/Body" index="1"]
+modulate = Color(1, 1, 1, 1.0000004)
+position = Vector2(17.44958, -60.275593)
+
+[node name="Zzz3" parent="SleepComponent/Body" index="2"]
+modulate = Color(1, 1, 1, 1)
+position = Vector2(37.427803, -35.740993)
 
 [node name="BlinkComponent" parent="." index="5"]
 all_blink_body_change = Array[ExtResource("6_7p2oy")]([SubResource("Resource_gq356")])
 
+[node name="HurtBoxComponent" parent="." index="7"]
+scale = Vector2(1.307885, 0.76016694)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8" unique_id=989437954]
-libraries/ = SubResource("AnimationLibrary_w5ly5")
+libraries/ = SubResource("AnimationLibrary_vqtpa")
+libraries/Global = SubResource("AnimationLibrary_rn766")
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="9" unique_id=633329466]
 deterministic = false

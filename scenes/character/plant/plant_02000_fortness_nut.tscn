@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://omrjrgsit2vm"]
+
+[ext_resource type="PackedScene" uid="uid://c5cke4cm02um7" path="res://scenes/character/plant/plant_000_base.tscn" id="1_4ql4v"]
+[ext_resource type="Script" uid="uid://dvs604kektg7k" path="res://scripts/character/plant/plant_02000_fortness_nut.gd" id="2_k62tb"]
+[ext_resource type="Texture2D" uid="uid://bokyy4o8t5uy7" path="res://assets/reanim/Giant_Fortness_Nut_1st_Degrade.png" id="3_k62tb"]
+[ext_resource type="Animation" uid="uid://du3y5epnga0u2" path="res://animation/character/plant/02000_fortness_nut/Fortness_face.tres" id="7_4ql4v"]
+[ext_resource type="Animation" uid="uid://bdgup5skf4suu" path="res://animation/character/plant/02000_fortness_nut/Fortness_idle.tres" id="8_dai7e"]
+[ext_resource type="Texture2D" uid="uid://cod01lykb2vps" path="res://assets/reanim/Giant_Fortness_Nut_2nd_Degrade.png" id="8_f3bmk"]
+[ext_resource type="Texture2D" uid="uid://br47b5xnqskks" path="res://assets/reanim/Giant_Fortness_Nut_3rd_Degrade.png" id="9_cayd7"]
+[ext_resource type="Script" uid="uid://4o1wtnifn4tq" path="res://scripts/character/components/hp_component/component_hp_stage_change.gd" id="9_gwxby"]
+[ext_resource type="Script" uid="uid://jl0nl4a234bc" path="res://scripts/resources/resource_body_change.gd" id="10_14cgs"]
+
+[sub_resource type="Animation" id="Animation_f3bmk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/BodyCorrect/Fortness_idle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_k62tb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/BodyCorrect/Fortness_idle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-40, -49.000004)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/BodyCorrect/Fortness_idle:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/BodyCorrect/Fortness_idle:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.15, 0.15)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/BodyCorrect/Fortness_idle:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cayd7"]
+_data = {
+&"RESET": SubResource("Animation_f3bmk")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k62tb"]
+_data = {
+&"Fortness_face": ExtResource("7_4ql4v"),
+&"Fortness_idle": ExtResource("8_dai7e")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tx35c"]
+animation = &"Global/Fortness_face"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w5ly5"]
+animation = &"Global/Fortness_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_esarn"]
+advance_mode = 2
+advance_expression = "is_face"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kqxfl"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_63m75"]
+states/Fortness_face/node = SubResource("AnimationNodeAnimation_tx35c")
+states/Fortness_face/position = Vector2(625, 100)
+states/Fortness_idle/node = SubResource("AnimationNodeAnimation_w5ly5")
+states/Fortness_idle/position = Vector2(389, 100)
+states/Start/position = Vector2(150, 74)
+transitions = ["Fortness_idle", "Fortness_face", SubResource("AnimationNodeStateMachineTransition_esarn"), "Start", "Fortness_idle", SubResource("AnimationNodeStateMachineTransition_kqxfl")]
+graph_offset = Vector2(90.95227, 29.837984)
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_r0k88"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_hev76"]
+graph_offset = Vector2(65.47332, -42.27865)
+nodes/output/position = Vector2(900, 120)
+nodes/AnimationNodeStateMachine/node = SubResource("AnimationNodeStateMachine_63m75")
+nodes/AnimationNodeStateMachine/position = Vector2(260, 100)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_r0k88")
+nodes/TimeScale/position = Vector2(600, 100)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"AnimationNodeStateMachine"]
+
+[sub_resource type="Resource" id="Resource_hev76"]
+script = ExtResource("10_14cgs")
+sprite_change = Array[NodePath]([NodePath("../Body/BodyCorrect/Fortness_idle")])
+sprite_change_texture = Array[Texture2D]([ExtResource("8_f3bmk")])
+metadata/_custom_type_script = "uid://jl0nl4a234bc"
+
+[sub_resource type="Resource" id="Resource_akyvq"]
+script = ExtResource("10_14cgs")
+sprite_change = Array[NodePath]([NodePath("../Body/BodyCorrect/Fortness_idle")])
+sprite_change_texture = Array[Texture2D]([ExtResource("9_cayd7")])
+metadata/_custom_type_script = "uid://jl0nl4a234bc"
+
+[node name="Plant02000FortnessNut" unique_id=224325203 instance=ExtResource("1_4ql4v")]
+script = ExtResource("2_k62tb")
+plant_type = 51
+
+[node name="Shadow" parent="." index="0"]
+position = Vector2(0, -5)
+
+[node name="BodyCorrect" parent="Body" index="0"]
+unique_name_in_owner = true
+position = Vector2(-43, -69)
+
+[node name="Fortness_idle" type="Sprite2D" parent="Body/BodyCorrect" index="0" unique_id=1951770121]
+position = Vector2(-40, -49.000004)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_k62tb")
+centered = false
+
+[node name="HpComponent" parent="." index="3"]
+max_hp = 20000
+
+[node name="HpControl" parent="HpComponent" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBarHp" parent="HpComponent/HpControl" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelHp" parent="HpComponent/HpControl" index="1"]
+metadata/_edit_use_anchors_ = true
+
+[node name="HurtBoxDetection" parent="HurtBoxComponent" index="0"]
+scale = Vector2(2.5661726, 1)
+
+[node name="HurtBoxReal" parent="HurtBoxComponent" index="1"]
+scale = Vector2(2.5588984, 1.1415517)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8" unique_id=989437954]
+libraries/ = SubResource("AnimationLibrary_cayd7")
+libraries/Global = SubResource("AnimationLibrary_k62tb")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="9" unique_id=633329466]
+deterministic = false
+tree_root = SubResource("AnimationNodeBlendTree_hev76")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
+parameters/TimeScale/scale = 1.0
+
+[node name="HpStageChangeComponent" type="Node2D" parent="." index="10" unique_id=1709842757]
+script = ExtResource("9_gwxby")
+boundary_value_hp = Array[int]([2666, 1333, 0])
+body_change = Array[ExtResource("10_14cgs")]([SubResource("Resource_hev76"), SubResource("Resource_akyvq"), null])

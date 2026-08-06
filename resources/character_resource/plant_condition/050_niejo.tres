@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_jpkm2")
-place_plant_in_cell = 3
+place_plant_in_cell = 1
 is_special_plants = true
 metadata/_custom_type_script = "uid://papwojmcoiwb"

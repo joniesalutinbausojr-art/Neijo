@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvasdbokm8eny"]
+[gd_scene format=3 uid="uid://dvasdbokm8eny"]
 
 [ext_resource type="Script" uid="uid://oounu8nyx4q4" path="res://scripts/garden/Item/garden_item_06_glove.gd" id="1_uj2oe"]
 [ext_resource type="Texture2D" uid="uid://d4lqo87x72hwx" path="res://assets/image/garden/Zen_GardenGlove.png" id="2_qeck3"]
@@ -7,22 +7,22 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_83fl8"]
 radius = 0.1
 
-[node name="Glove" type="Node2D"]
+[node name="Glove" type="Node2D" unique_id=1689936312]
 script = ExtResource("1_uj2oe")
 
-[node name="Body" type="Node2D" parent="."]
+[node name="Body" type="Node2D" parent="." unique_id=67377061]
 
-[node name="ZenGardenGlove" type="Sprite2D" parent="Body"]
+[node name="ZenGardenGlove" type="Sprite2D" parent="Body" unique_id=736465530]
 texture = ExtResource("2_qeck3")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1456615968]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1530255762]
 shape = SubResource("CircleShape2D_83fl8")
 
-[node name="PlantCellGarden" type="Control" parent="."]
+[node name="PlantCellGarden" type="Control" parent="." unique_id=1758390068]
 z_index = 100
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 3
@@ -33,7 +33,7 @@ offset_right = 39.0
 offset_bottom = 39.0
 script = ExtResource("3_lpp2i")
 
-[node name="Panel" type="Panel" parent="PlantCellGarden"]
+[node name="Panel" type="Panel" parent="PlantCellGarden" unique_id=1484187192]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -42,7 +42,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlantDownContainer" type="Control" parent="PlantCellGarden"]
+[node name="PlantDownContainer" type="Control" parent="PlantCellGarden" unique_id=864086203]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,7 +56,7 @@ offset_bottom = 10.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlantFloatContainer" type="Control" parent="PlantCellGarden"]
+[node name="PlantFloatContainer" type="Control" parent="PlantCellGarden" unique_id=251697877]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -70,7 +70,7 @@ offset_bottom = -30.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlantNormContainer" type="Control" parent="PlantCellGarden"]
+[node name="PlantNormContainer" type="Control" parent="PlantCellGarden" unique_id=1644102757]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -80,7 +80,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlantShellContainer" type="Control" parent="PlantCellGarden"]
+[node name="PlantShellContainer" type="Control" parent="PlantCellGarden" unique_id=344064255]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

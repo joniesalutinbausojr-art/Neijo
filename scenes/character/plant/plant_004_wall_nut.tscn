@@ -68,7 +68,7 @@ sprite_change = Array[NodePath]([NodePath("../Body/BodyCorrect/Anim_face")])
 sprite_change_texture = Array[Texture2D]([ExtResource("13_akyvq")])
 metadata/_custom_type_script = "uid://jl0nl4a234bc"
 
-[node name="Plant004WallNut" instance=ExtResource("1_rscpg")]
+[node name="Plant004WallNut" unique_id=308722997 instance=ExtResource("1_rscpg")]
 script = ExtResource("2_v6xc2")
 plant_type = 4
 is_can_ladder = true
@@ -80,29 +80,29 @@ position = Vector2(0, -5)
 unique_name_in_owner = true
 position = Vector2(-43, -69)
 
-[node name="_ground" type="Sprite2D" parent="Body/BodyCorrect" index="0"]
+[node name="_ground" type="Sprite2D" parent="Body/BodyCorrect" index="0" unique_id=1757037268]
 centered = false
 
-[node name="Anim_idle" type="Sprite2D" parent="Body/BodyCorrect" index="1"]
+[node name="Anim_idle" type="Sprite2D" parent="Body/BodyCorrect" index="1" unique_id=535715217]
 centered = false
 
-[node name="Anim_face" type="Sprite2D" parent="Body/BodyCorrect" index="2"]
-position = Vector2(6.5065374, 4.1246166)
-rotation = -0.0053410362
-scale = Vector2(0.7, 0.71550256)
+[node name="Anim_face" type="Sprite2D" parent="Body/BodyCorrect" index="2" unique_id=618907481]
+position = Vector2(8.501638, 4.0897994)
+rotation = 0.02348736
+scale = Vector2(0.7, 0.7039836)
 texture = ExtResource("2_1opod")
 centered = false
 
-[node name="Anim_blink_twitch" type="Sprite2D" parent="Body/BodyCorrect" index="3"]
+[node name="Anim_blink_twitch" type="Sprite2D" parent="Body/BodyCorrect" index="3" unique_id=2083829945]
 visible = false
-position = Vector2(28.981411, 35.75301)
+position = Vector2(30.089773, 36.22284)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_ia1rq")
 centered = false
 
-[node name="Anim_blink_twice" type="Sprite2D" parent="Body/BodyCorrect" index="4"]
+[node name="Anim_blink_twice" type="Sprite2D" parent="Body/BodyCorrect" index="4" unique_id=38032385]
 visible = false
-position = Vector2(27.78141, 21.753014)
+position = Vector2(28.889772, 22.222841)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_s15q3")
 centered = false
@@ -113,19 +113,17 @@ max_hp = 4000
 [node name="BlinkComponent" parent="." index="5"]
 all_blink_body_change = Array[ExtResource("8_y4g8x")]([SubResource("Resource_gq356")])
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
-libraries = {
-&"": SubResource("AnimationLibrary_w5ly5")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8" unique_id=962985314]
+libraries/ = SubResource("AnimationLibrary_w5ly5")
 
-[node name="AnimationTree" type="AnimationTree" parent="." index="9"]
+[node name="AnimationTree" type="AnimationTree" parent="." index="9" unique_id=1369081908]
 deterministic = false
 tree_root = SubResource("AnimationNodeBlendTree_hev76")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/TimeScale/scale = 1.0
 
-[node name="HpStageChangeComponent" type="Node2D" parent="." index="10"]
+[node name="HpStageChangeComponent" type="Node2D" parent="." index="10" unique_id=2029937469]
 script = ExtResource("7_s15q3")
 boundary_value_hp = Array[int]([2666, 1333, 0])
 body_change = Array[ExtResource("8_y4g8x")]([SubResource("Resource_hev76"), SubResource("Resource_akyvq"), null])

@@ -223,17 +223,30 @@ func _on_detect_main_game_item(curr_main_game_item:MainGameItemBase)->bool:
 		return false
 
 ## 当检测到角色
-func _on_detect_character(enemy:Character000Base) -> bool:
+## 当检测到角色
+func _on_detect_character(enemy: Character000Base) -> bool:
 	## 如果角色可以被攻击，更新当前可以被攻击的角色
 	if _judge_enemy_is_can_be_attack(enemy):
 		if enemy is Plant000Base:
 			enemy_can_be_attacked = get_first_be_hit_plant_in_cell(enemy)
 		elif enemy is Zombie000Base:
 			enemy_can_be_attacked = enemy
-		enemy_can_be_attacked.signal_character_death.connect(func():need_judge = true)
-		return true
+
+		# Safety check — huwag mag-access kung null
+		if is_instance_valid(enemy_can_be_attacked):
+			# Iwasan ang double-connect
+			if not enemy_can_be_attacked.signal_character_death.is_connected(_on_enemy_character_death):
+				enemy_can_be_attacked.signal_character_death.connect(_on_enemy_character_death)
+			return true
+		else:
+			return false
 	else:
 		return false
+
+
+## Kapag namatay ang current enemy, i-trigger ang re-judge
+func _on_enemy_character_death() -> void:
+	need_judge = true
 
 ## 获取应该被攻击的植物,在当前植物格子中
 func get_first_be_hit_plant_in_cell(plant:Plant000Base)->Plant000Base:

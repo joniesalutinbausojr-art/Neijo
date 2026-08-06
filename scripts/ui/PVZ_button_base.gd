@@ -29,4 +29,3 @@ func _on_button_up() -> void:
 		current_tween.kill()  # 停止上一个 Tween
 	current_tween = create_tween()
 	current_tween.tween_property(self, "position", original_pos, 0.1)
-

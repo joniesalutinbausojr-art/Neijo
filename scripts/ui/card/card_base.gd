@@ -9,14 +9,30 @@ enum E_CardBg{
 	CB01Norm,	## 普通卡片背景
 	CB02Purple,	## 紫卡背景
 	CB03Gray,	## 灰卡背景
+	CB04Gold, # Special Plants
+	CB05Red, # Titan Plants
+	CB06Blue,
+	CB07Pink,
+	CB08Black,
 }
 
 ## 卡片背景对应资源
 var CradBgMap:Dictionary[E_CardBg, Resource] = {
 	E_CardBg.CB01Norm:load("res://resources/card_bg/01Norm.tres"),
 	E_CardBg.CB02Purple:load("res://resources/card_bg/02Purple.tres"),
-	E_CardBg.CB03Gray:load("res://resources/card_bg/03Gray.tres")
+	E_CardBg.CB03Gray:load("res://resources/card_bg/03Gray.tres"),
+	E_CardBg.CB04Gold:load("res://assets/image/ui/ui_card/SeedPacket_Gold.png"),
+	E_CardBg.CB05Red:load("res://assets/image/ui/ui_card/SeedPacket_Red.png"),
+	E_CardBg.CB06Blue:load("res://assets/image/ui/ui_card/SeedPacket_Blue.png"),
+	E_CardBg.CB07Pink:load("res://assets/image/ui/ui_card/SeedPacket_Pink.png"),
+	E_CardBg.CB08Black:load("res://assets/image/ui/ui_card/SeedPacket_Black.png"),
 }
+
+## Special na plant type -> card bg mapping (dito idadagdag ang bawat bagong special plant)
+var PlantTypeCardBgMap:Dictionary[CharacterRegistry.PlantType, E_CardBg] = {
+		CharacterRegistry.PlantType.P050Niejo: E_CardBg.CB04Gold,
+		}
+
 
 ## 卡片索引位置,用于在备选卡槽时确定位置
 @export var card_id :int = -1
@@ -56,7 +72,8 @@ func _ready() -> void:
 			curr_card_gb = E_CardBg.CB02Purple
 		if is_imitater:
 			curr_card_gb = E_CardBg.CB03Gray
-
+		if PlantTypeCardBgMap.has(card_plant_type):
+			curr_card_gb = PlantTypeCardBgMap[card_plant_type]
 
 		card_bg.texture = CradBgMap[curr_card_gb]
 
@@ -71,4 +88,3 @@ func init_card(card_init_para:Dictionary):
 	card_id = card_init_para[E_CInitAttr.CardId]
 	cool_time = card_init_para[E_CInitAttr.CoolTime]
 	sun_cost = card_init_para[E_CInitAttr.SunCost]
-

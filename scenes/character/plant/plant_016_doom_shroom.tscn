@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cjj4vfumgbq5k"]
+[gd_scene format=3 uid="uid://cjj4vfumgbq5k"]
 
 [ext_resource type="PackedScene" uid="uid://c5cke4cm02um7" path="res://scenes/character/plant/plant_000_base.tscn" id="1_uubea"]
 [ext_resource type="Texture2D" uid="uid://cdtfyduah2ly" path="res://assets/reanim/DoomShroom_body.png" id="2_55ivw"]
@@ -1578,7 +1578,7 @@ _data = {
 &"idle": SubResource("Animation_rcrem")
 }
 
-[node name="Plant016DoomShroom" node_paths=PackedStringArray("node_no_change_direction", "node2d_detect_in_slope") instance=ExtResource("1_uubea")]
+[node name="Plant016DoomShroom" unique_id=1935377041 node_paths=PackedStringArray("node_no_change_direction", "node2d_detect_in_slope") instance=ExtResource("1_uubea")]
 script = ExtResource("2_tjrwq")
 plant_type = 16
 is_sleep_in_day = true
@@ -1588,27 +1588,27 @@ node2d_detect_in_slope = [NodePath("HurtBoxComponent/HurtBoxDetection"), NodePat
 [node name="BodyCorrect" parent="Body" index="0"]
 position = Vector2(-39, -72)
 
-[node name="DoomShroom_body" type="Sprite2D" parent="Body/BodyCorrect" index="0"]
-position = Vector2(16.282207, 42.35338)
-scale = Vector2(0.8333007, 0.7523434)
+[node name="DoomShroom_body" type="Sprite2D" parent="Body/BodyCorrect" index="0" unique_id=1366467018]
+position = Vector2(17.110554, 39.96834)
+scale = Vector2(0.79952514, 0.80058044)
 texture = ExtResource("2_55ivw")
 centered = false
 
-[node name="DoomShroom_head1" type="Sprite2D" parent="Body/BodyCorrect" index="1"]
-position = Vector2(-1.2355874, 7.4889684)
-scale = Vector2(0.8257117, 0.76311034)
+[node name="DoomShroom_head1" type="Sprite2D" parent="Body/BodyCorrect" index="1" unique_id=1530820947]
+position = Vector2(0.01582995, 3.541957)
+scale = Vector2(0.7996834, 0.800686)
 texture = ExtResource("3_oiu6n")
 centered = false
 
-[node name="DoomShroom_head2" type="Sprite2D" parent="Body/BodyCorrect" index="2"]
+[node name="DoomShroom_head2" type="Sprite2D" parent="Body/BodyCorrect" index="2" unique_id=1250230917]
 visible = false
 centered = false
 
-[node name="DoomShroom_head3" type="Sprite2D" parent="Body/BodyCorrect" index="3"]
+[node name="DoomShroom_head3" type="Sprite2D" parent="Body/BodyCorrect" index="3" unique_id=1989426455]
 visible = false
 centered = false
 
-[node name="DoomShroom_sleepinghead" type="Sprite2D" parent="Body/BodyCorrect" index="4"]
+[node name="DoomShroom_sleepinghead" type="Sprite2D" parent="Body/BodyCorrect" index="4" unique_id=1051728927]
 visible = false
 centered = false
 
@@ -1618,121 +1618,117 @@ sleep_influence_components = [NodePath("../BlinkComponent"), NodePath("../BombCo
 [node name="BlinkComponent" parent="." index="5"]
 is_enable_default = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
-libraries = {
-&"": SubResource("AnimationLibrary_rjiww")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8" unique_id=1058361536]
+libraries/ = SubResource("AnimationLibrary_rjiww")
 
-[node name="AnimationTree" type="AnimationTree" parent="." index="9"]
+[node name="AnimationTree" type="AnimationTree" parent="." index="9" unique_id=1225098987]
 deterministic = false
 tree_root = SubResource("AnimationNodeBlendTree_tjrwq")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/TimeScale/scale = 1.0
 
-[node name="BombComponent" type="Node2D" parent="." index="10"]
+[node name="BombComponent" type="Node2D" parent="." index="10" unique_id=2103871780]
 unique_name_in_owner = true
 script = ExtResource("7_enwho")
 can_attack_plant_status = 7
 can_attack_zombie_status = 63
 bomb_sfx = &"DoomShroom"
 
-[node name="Area2DBomb" type="Area2D" parent="BombComponent" index="0"]
+[node name="Area2DBomb" type="Area2D" parent="BombComponent" index="0" unique_id=1216879586]
 collision_layer = 0
 collision_mask = 2068
 input_pickable = false
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BombComponent/Area2DBomb" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BombComponent/Area2DBomb" index="0" unique_id=332617775]
 position = Vector2(0, -25)
 shape = SubResource("RectangleShape2D_64sl4")
 
-[node name="BombEffect" type="Node2D" parent="BombComponent" index="1"]
+[node name="BombEffect" type="Node2D" parent="BombComponent" index="1" unique_id=983365605]
 visible = false
 position = Vector2(0, -195)
 script = ExtResource("11_xh3xa")
 
-[node name="DoomShroomExplosionStem" type="Sprite2D" parent="BombComponent/BombEffect" index="0"]
+[node name="DoomShroomExplosionStem" type="Sprite2D" parent="BombComponent/BombEffect" index="0" unique_id=4991436]
 position = Vector2(0, 91)
 texture = ExtResource("12_64sl4")
 
-[node name="DoomShroomExplosionBase" type="Sprite2D" parent="BombComponent/BombEffect" index="1"]
+[node name="DoomShroomExplosionBase" type="Sprite2D" parent="BombComponent/BombEffect" index="1" unique_id=1818399684]
 position = Vector2(0, 173)
 texture = ExtResource("13_yiuho")
 hframes = 3
 
-[node name="Node2D" type="Node2D" parent="BombComponent/BombEffect" index="2"]
+[node name="Node2D" type="Node2D" parent="BombComponent/BombEffect" index="2" unique_id=125859189]
 
-[node name="DoomShroomExplosionTop" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="0"]
+[node name="DoomShroomExplosionTop" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="0" unique_id=1640952761]
 position = Vector2(-45, -69)
 scale = Vector2(0.44898, 0.433121)
 texture = ExtResource("9_tjrwq")
 
-[node name="DoomShroomExplosionTop2" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="1"]
+[node name="DoomShroomExplosionTop2" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="1" unique_id=1156628572]
 position = Vector2(-78, -35)
 rotation = -0.523598
 scale = Vector2(0.388601, 0.332338)
 texture = ExtResource("9_tjrwq")
 
-[node name="DoomShroomExplosionTop3" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="2"]
+[node name="DoomShroomExplosionTop3" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="2" unique_id=1732740406]
 position = Vector2(68, -69)
 rotation = -0.785397
 scale = Vector2(0.389244, 0.410749)
 texture = ExtResource("9_tjrwq")
 
-[node name="DoomShroomExplosionTop4" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="3"]
+[node name="DoomShroomExplosionTop4" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="3" unique_id=314125402]
 position = Vector2(-12, -8)
 scale = Vector2(0.44898, 0.433121)
 texture = ExtResource("9_tjrwq")
 
-[node name="DoomShroomExplosionTop5" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="4"]
+[node name="DoomShroomExplosionTop5" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="4" unique_id=356776606]
 position = Vector2(-12, -82)
 rotation = -0.523598
 scale = Vector2(0.44898, 0.433121)
 texture = ExtResource("9_tjrwq")
 
-[node name="DoomShroomExplosionTop6" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="5"]
+[node name="DoomShroomExplosionTop6" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="5" unique_id=198822280]
 position = Vector2(1.90735e-06, -54)
 rotation = -1.0472
 scale = Vector2(0.44898, 0.433121)
 texture = ExtResource("9_tjrwq")
 
-[node name="DoomShroomExplosionTop7" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="6"]
+[node name="DoomShroomExplosionTop7" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="6" unique_id=984613748]
 position = Vector2(37, -84)
 rotation = -0.261799
 scale = Vector2(0.44898, 0.433121)
 texture = ExtResource("9_tjrwq")
 
-[node name="DoomShroomExplosionTop8" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="7"]
+[node name="DoomShroomExplosionTop8" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="7" unique_id=1631499548]
 position = Vector2(37, -8)
 rotation = 0.261799
 scale = Vector2(0.44898, 0.433121)
 texture = ExtResource("9_tjrwq")
 
-[node name="DoomShroomExplosionTop9" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="8"]
+[node name="DoomShroomExplosionTop9" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="8" unique_id=2091005410]
 position = Vector2(47, -40)
 rotation = -0.523598
 scale = Vector2(0.44898, 0.433121)
 texture = ExtResource("9_tjrwq")
 
-[node name="DoomShroomExplosionTop10" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="9"]
+[node name="DoomShroomExplosionTop10" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="9" unique_id=163919413]
 position = Vector2(-43, -27)
 scale = Vector2(0.44898, 0.433121)
 texture = ExtResource("9_tjrwq")
 
-[node name="DoomShroomExplosionTop11" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="10"]
+[node name="DoomShroomExplosionTop11" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="10" unique_id=1074215288]
 position = Vector2(79, -21)
 rotation = 1.309
 scale = Vector2(0.44898, 0.433121)
 texture = ExtResource("9_tjrwq")
 
-[node name="DoomShroomExplosionTop12" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="11"]
+[node name="DoomShroomExplosionTop12" type="Sprite2D" parent="BombComponent/BombEffect/Node2D" index="11" unique_id=1663016175]
 position = Vector2(-64, -8)
 rotation = -0.261799
 scale = Vector2(0.44898, 0.433121)
 texture = ExtResource("9_tjrwq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BombComponent/BombEffect" index="3"]
-libraries = {
-&"": SubResource("AnimationLibrary_0ls8s")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BombComponent/BombEffect" index="3" unique_id=526347599]
+libraries/ = SubResource("AnimationLibrary_0ls8s")

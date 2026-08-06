@@ -157,18 +157,46 @@ enum E_TempCardParaAttr{
 
 ## 创建临时卡片
 func create_temp_card(temp_card_para:Dictionary) -> Card:
-	var new_card_prefabs:Card
+	var new_card_prefabs: Card
+
 	if temp_card_para.has(E_TempCardParaAttr.PlantType) and temp_card_para[E_TempCardParaAttr.PlantType] != CharacterRegistry.PlantType.Null:
 		new_card_prefabs = AllCards.all_plant_card_prefabs[temp_card_para[E_TempCardParaAttr.PlantType]]
-	elif temp_card_para.has(E_TempCardParaAttr.ZombieType) and temp_card_para[E_TempCardParaAttr.ZombieType] !=  CharacterRegistry.ZombieType.Null:
+	elif temp_card_para.has(E_TempCardParaAttr.ZombieType) and temp_card_para[E_TempCardParaAttr.ZombieType] != CharacterRegistry.ZombieType.Null:
 		new_card_prefabs = AllCards.all_zombie_card_prefabs[temp_card_para[E_TempCardParaAttr.ZombieType]]
 	else:
 		print("error: 没有卡片类型")
 		return
+
 	var temp_card = new_card_prefabs.duplicate()
 	curr_temp_cards.append(temp_card)
 	canvas_layer_card_slot_front.add_child(temp_card)
-	temp_card.global_position = temp_card_para.get(E_TempCardParaAttr.GlobalPos, Vector2(100, 100))
+
+	var target_pos = temp_card_para.get(E_TempCardParaAttr.GlobalPos, Vector2(100, 100))
+
+	# Simula nang bahagyang mababa
+	temp_card.global_position = target_pos + Vector2(0, 20)
+
+	# Bounce animation
+	var tween = create_tween()
+
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(
+		temp_card,
+		"global_position",
+		target_pos + Vector2(0, -10),
+		0.18
+	)
+
+	tween.set_trans(Tween.TRANS_BOUNCE)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(
+		temp_card,
+		"global_position",
+		target_pos,
+		0.18
+	)
+
 	temp_card.signal_card_use_end.connect(card_use_end.bind(temp_card))
 
 	if temp_card_para.has(E_TempCardParaAttr.ExistTime):

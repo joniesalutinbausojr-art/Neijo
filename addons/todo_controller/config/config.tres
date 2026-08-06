@@ -139,6 +139,7 @@ script_list_meta = {
 "res://scripts/character/plant/plant_017_lily_pad.gd": [-1, -1],
 "res://scripts/character/plant/plant_018_squash.gd": [-1, -1],
 "res://scripts/character/plant/plant_019_three_peater.gd": [-1, -1],
+"res://scripts/character/plant/plant_02000_fortness_nut.gd": [-1, -1],
 "res://scripts/character/plant/plant_020_tanglekelp.gd": [-1, -1],
 "res://scripts/character/plant/plant_021_jalapeno.gd": [-1, -1],
 "res://scripts/character/plant/plant_022_caltrop.gd": [-1, -1],

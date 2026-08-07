@@ -124,7 +124,8 @@ func _update_cell_shadow(plant_cell:PlantCell, curr_characte_static_shadow:Node2
 		if plant_condition.judge_is_can_plant(plant_cell, curr_card.card_plant_type):
 			var shadow_global_position:Vector2 = plant_cell.get_new_plant_static_shadow_global_position(plant_condition.place_plant_in_cell)
 			## 巨型植物(占用两个格子)虚影显示在两格子中间,和实际种植后的位置保持一致
-			if plant_condition is ResourcePlantConditionTitan:
+			if plant_condition is ResourcePlantConditionTitan or plant_condition is ResourcePlantConditionFortnessNut:
+
 				var titan_neighbor_cell:PlantCell = plant_condition.get_titan_neighbor_cell(plant_cell)
 				if is_instance_valid(titan_neighbor_cell):
 					var direction_sign := 1 if titan_neighbor_cell.row_col.y > plant_cell.row_col.y else -1

@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="ResourcePlantConditionTitan" format=3 uid="uid://d2fq5sww0sccp"]
+[gd_resource type="Resource" script_class="ResourcePlantConditionFortnessNut" load_steps=2 format=3]
 
-[ext_resource type="Script" uid="uid://bdldxpng0l3cy" path="res://scripts/resources/plant_condition/condition_titan_base.gd" id="1_uhr54"]
+[ext_resource type="Script" path="res://scripts/resources/plant_condition/condition_02000_fortness_nut.gd" id="1_fnut"]
 
 [resource]
-script = ExtResource("1_uhr54")
+script = ExtResource("1_fnut")
+plant_condition = 22
+place_plant_in_cell = 0
 is_special_plants = true
+is_purple_card = false
+

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ResourcePlantConditionTitan" format=3 uid="uid://d2fq5sww0sccp"]
+
+[ext_resource type="Script" uid="uid://bdldxpng0l3cy" path="res://scripts/resources/plant_condition/condition_titan_base.gd" id="1_uhr54"]
+
+[resource]
+script = ExtResource("1_uhr54")
+is_special_plants = true

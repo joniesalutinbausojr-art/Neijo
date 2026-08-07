@@ -6,7 +6,7 @@
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("Body/BodyCorrect/Fortness_idle:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true

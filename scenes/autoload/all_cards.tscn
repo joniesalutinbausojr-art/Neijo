@@ -1020,7 +1020,7 @@ plant_card_ids = Dictionary[int, int]({
 48: 47,
 49: 51,
 50: 52,
-51: 51,
+51: 53,
 1001: 48,
 1002: 49,
 1003: 50
@@ -6654,15 +6654,17 @@ columns = 8
 
 [node name="Card" parent="PlantCards3" unique_id=994675343 instance=ExtResource("2_5pqky")]
 layout_mode = 2
-card_id = 51
+card_id = 53
 card_plant_type = 51
 curr_card_gb = 6
-sun_cost = 50
+cool_time = 30.0
+sun_cost = 125
 
 [node name="CardBg" parent="PlantCards3/Card" index="0"]
 texture = ExtResource("384_b70e6")
 
 [node name="Cost" parent="PlantCards3/Card/CardBg" index="0"]
+visible = false
 text = "50"
 
 [node name="02000FortnessNut" type="Node2D" parent="PlantCards3/Card/CardBg/CharacterStatic" index="0" unique_id=1413719046]

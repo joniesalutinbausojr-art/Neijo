@@ -556,6 +556,15 @@ const PlantInfo = {
 	PlantInfoAttribute.PlantScenes: preload("res://scenes/character/plant/plant_050_niejo.tscn")
 },
 
+	## Titan Plants
+	PlantType.P02000FortnessNut: {
+		PlantInfoAttribute.PlantName: "FortnessNut",
+		PlantInfoAttribute.CoolTime: 30.0,
+		PlantInfoAttribute.SunCost: 125,
+		PlantInfoAttribute.PlantConditionResource : preload("res://resources/character_resource/plant_condition/02000_fortness_nut.tres"),
+		PlantInfoAttribute.PlantScenes : preload("res://scenes/character/plant/plant_02000_fortness_nut.tscn")
+		},
+
 	## 模仿者
 	PlantType.P999Imitater:{
 		PlantInfoAttribute.PlantName: "Imitater",
@@ -611,13 +620,6 @@ const PlantInfo = {
 		PlantInfoAttribute.PlantConditionResource : preload("res://resources/character_resource/plant_condition/000_common_plant_land.tres"),
 		PlantInfoAttribute.PlantScenes : preload("res://scenes/character/plant/plant_101_coin_pea.tscn")
 		}, 
-	PlantType.P02000FortnessNut: {
-			PlantInfoAttribute.PlantName: "FortressNut",
-				PlantInfoAttribute.CoolTime: 30.0,
-					PlantInfoAttribute.SunCost: 100,
-						PlantInfoAttribute.PlantConditionResource: preload("res://resources/character_resource/plant_condition/000_common_plant_land.tres"),
-							PlantInfoAttribute.PlantScenes: preload("res://scenes/character/plant/plant_02000_fortness_nut.tscn")
-							},
 		
 }
 

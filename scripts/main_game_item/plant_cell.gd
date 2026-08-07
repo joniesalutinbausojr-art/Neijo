@@ -274,8 +274,8 @@ func one_plant_free(plant:Plant000Base):
 		plant.down_plant_container.remove_child(plant_container_node[CharacterRegistry.PlacePlantInCell.Shell])
 		add_child(plant_container_node[CharacterRegistry.PlacePlantInCell.Shell])
 		plant_container_node[CharacterRegistry.PlacePlantInCell.Shell].global_position = plant_postion_node_ori_global_position[CharacterRegistry.PlacePlantInCell.Shell]
-	## 玉米加农炮只有后轮plantcell发射信号更新植物数据
-	if plant.plant_type == CharacterRegistry.PlantType.P048CobCannon:
+	## 玉米加农炮、堡垒坚果(巨型植物)占用两个格子，只有锚点(种植时所在)plantcell发射信号更新植物数据，避免重复统计
+	if plant.plant_type == CharacterRegistry.PlantType.P048CobCannon or plant.plant_type == CharacterRegistry.PlantType.P02000FortnessNut:
 		if plant.plant_cell == self:
 			signal_plant_free.emit(self, plant.plant_type)
 	else:

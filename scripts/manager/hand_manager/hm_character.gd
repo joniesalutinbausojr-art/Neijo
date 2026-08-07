@@ -126,6 +126,7 @@ func _update_cell_shadow(plant_cell:PlantCell, curr_characte_static_shadow:Node2
 			## 巨型植物(占用两个格子)虚影显示在两格子中间,和实际种植后的位置保持一致
 			if plant_condition is ResourcePlantConditionTitan:
 
+
 				var titan_neighbor_cell:PlantCell = plant_condition.get_titan_neighbor_cell(plant_cell)
 				if is_instance_valid(titan_neighbor_cell):
 					var direction_sign := 1 if titan_neighbor_cell.row_col.y > plant_cell.row_col.y else -1

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ResourcePlantConditionFortnessNut" format=3 uid="uid://c307oayviogsg"]
+
+[ext_resource type="Script" uid="uid://bml1ylpgrbahy" path="res://scripts/resources/plant_condition/condition_02000_fortness_nut.gd" id="1_fnut"]
+
+[resource]
+script = ExtResource("1_fnut")
+is_special_plants = true

@@ -1,4 +1,4 @@
-extends Plant000Base
+extends PlantFusionBase
 class_name Plant100SunPea
 
 ## 融合植物：SunPea = SunFlower + Peashooter
@@ -9,16 +9,14 @@ class_name Plant100SunPea
 @onready var create_sun_component: CreateSunComponent = $CreateSunComponent
 
 
+func _ready() -> void:
+	super()
+	fusion_components = [attack_component, create_sun_component]
+
 func ready_norm() -> void:
 	super()
 	if is_zombie_mode:
 		create_sun_component.disable_component(ComponentNormBase.E_IsEnableFactor.GameMode)
-
-## 初始化正常出战角色信号连接
-func ready_norm_signal_connect():
-	super()
-	signal_update_speed.connect(attack_component.owner_update_speed)
-	signal_update_speed.connect(create_sun_component.owner_update_speed)
 
 ## 被僵尸啃食一次特殊效果（我是僵尸模式下生产阳光）
 func _be_zombie_eat_once_special(_attack_zombie:Zombie000Base):

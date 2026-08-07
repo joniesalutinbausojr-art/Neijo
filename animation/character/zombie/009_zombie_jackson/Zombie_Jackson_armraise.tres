@@ -1,4 +1,4 @@
-[gd_resource type="Animation" load_steps=2 format=3 uid="uid://6g1fqjp3dose"]
+[gd_resource type="Animation" format=3 uid="uid://6g1fqjp3dose"]
 
 [ext_resource type="Texture2D" uid="uid://idsahid8s358" path="res://assets/reanim/Zombie_Jackson_innerarm_hand.png" id="1_qnv75"]
 
@@ -868,7 +868,7 @@ tracks/71/keys = {
 "times": PackedFloat32Array(0, 0.083333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.064577, 0.066323, 0.069813, 0.075049, 0.07854, 0.07854, 0.07854, 0.07854, 0.075049, 0.069813, 0.064577]
+"values": [0.064577, 0.06632299999999999, 0.069813, 0.075049, 0.07854, 0.07854, 0.07854, 0.07854, 0.075049, 0.069813, 0.064577]
 }
 tracks/72/type = "value"
 tracks/72/imported = false

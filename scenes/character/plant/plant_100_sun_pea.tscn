@@ -1730,22 +1730,22 @@ node2d_detect_in_slope = []
 position = Vector2(-43, -67)
 
 [node name="Backleaf" type="Sprite2D" parent="Body/BodyCorrect" index="0" unique_id=758259690]
-position = Vector2(27.6, 54.89561)
-scale = Vector2(0.5909414, 0.47413176)
+position = Vector2(27.6, 54.584076)
+scale = Vector2(0.58668154, 0.48371655)
 texture = ExtResource("3_60eq7")
 centered = false
 
 [node name="Backleaf_left_tip" type="Sprite2D" parent="Body/BodyCorrect" index="1" unique_id=1190417857]
-position = Vector2(24.701466, 55.494144)
-rotation = -0.0031843677
-scale = Vector2(0.62088287, 0.515)
+position = Vector2(24.815922, 55.068153)
+rotation = 0.019815285
+scale = Vector2(0.6122834, 0.515)
 texture = ExtResource("4_x5k4m")
 centered = false
 
 [node name="Backleaf_right_tip" type="Sprite2D" parent="Body/BodyCorrect" index="2" unique_id=427086449]
-position = Vector2(47.99707, 54.59707)
-rotation = 0.057340477
-scale = Vector2(0.6570732, 0.50408787)
+position = Vector2(47.792038, 54.376118)
+rotation = 0.038614452
+scale = Vector2(0.6623981, 0.5103981)
 texture = ExtResource("5_rxgfs")
 centered = false
 
@@ -1756,39 +1756,38 @@ scale = Vector2(0.114208005, 0.11566305)
 texture = ExtResource("6_rxgfs")
 
 [node name="Stalk_bottom" type="Sprite2D" parent="Body/BodyCorrect" index="4" unique_id=821509030]
-position = Vector2(40.08975, 50.098534)
-rotation = 0.43697923
-scale = Vector2(0.56298536, 0.6470879)
-skew = -0.1566456
+position = Vector2(39.336308, 50)
+rotation = 0.35746977
+scale = Vector2(0.56192034, 0.65347767)
+skew = -0.12560251
 texture = ExtResource("6_3xfh3")
 centered = false
 
 [node name="Stalk_top" type="Sprite2D" parent="Body/BodyCorrect" index="5" unique_id=1040114579]
-position = Vector2(38.379505, 36.9)
-rotation = 0.34131843
-scale = Vector2(0.57594144, 0.8151903)
-skew = -0.07848919
+position = Vector2(36.88854, 36.88408)
+rotation = 0.28583416
+scale = Vector2(0.5717612, 0.82919425)
+skew = -0.07532735
 texture = ExtResource("7_o15uo")
 centered = false
 
 [node name="Frontleaf" type="Sprite2D" parent="Body/BodyCorrect" index="6" unique_id=106134121]
-position = Vector2(22.001465, 55.998535)
-scale = Vector2(0.5879561, 0.50408787)
+position = Vector2(22.107962, 55.876118)
+scale = Vector2(0.5846815, 0.51047766)
 texture = ExtResource("8_ubo7b")
 centered = false
 
 [node name="Frontleaf_right_tip" type="Sprite2D" parent="Body/BodyCorrect" index="7" unique_id=2146403148]
-position = Vector2(56.794144, 56.8)
-rotation = -0.07717729
-scale = Vector2(0.6643221, 0.5400293)
+position = Vector2(56.368156, 56.792038)
+rotation = -0.105197355
+scale = Vector2(0.6876719, 0.5420796)
 texture = ExtResource("9_bq30v")
 centered = false
 
 [node name="Frontleaf_tip_left" type="Sprite2D" parent="Body/BodyCorrect" index="8" unique_id=1495979563]
-position = Vector2(18.904392, 61.49561)
-rotation = 0.023251168
-scale = Vector2(0.6041171, 0.56291217)
-skew = -0.0051590535
+position = Vector2(19.223885, 61.176117)
+rotation = 0.06428295
+scale = Vector2(0.6126369, 0.5565223)
 texture = ExtResource("10_nvxih")
 centered = false
 
@@ -1803,7 +1802,7 @@ scale = Vector2(0.21942304, 0.22907853)
 texture = ExtResource("13_o15uo")
 
 [node name="Anim_stem" type="Sprite2D" parent="Body/BodyCorrect" index="10" unique_id=210201914]
-position = Vector2(43.183895, 43.79561)
+position = Vector2(42.020382, 43.468155)
 centered = false
 
 [node name="stem_correct" type="Node2D" parent="Body/BodyCorrect/Anim_stem" index="0" unique_id=942522662]

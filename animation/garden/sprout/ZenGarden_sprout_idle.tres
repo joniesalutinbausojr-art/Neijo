@@ -1,4 +1,4 @@
-[gd_resource type="Animation" load_steps=5 format=3 uid="uid://05qghd6ixjs3"]
+[gd_resource type="Animation" format=3 uid="uid://05qghd6ixjs3"]
 
 [ext_resource type="Texture2D" uid="uid://bilk171gldfxp" path="res://assets/reanim/PotatoMine_rock3.png" id="0_fuck"]
 [ext_resource type="Texture2D" uid="uid://bjkgc0td8i23h" path="res://assets/reanim/sprout_body.png" id="1_fuck"]
@@ -1304,7 +1304,7 @@ tracks/107/keys = {
 "times": PackedFloat32Array(0, 0.083333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667, 1, 1.08333, 1.16667, 1.25, 1.33333, 1.41667, 1.5, 1.58333, 1.66667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.127409, 0.176278, 0.228638, 0.191986, 0.153589, 0.120428, 0.080285, 0.045379, 0.069813, 0.097738, 0.127409, 0.171042, 0.221657, 0.18326, 0.144862, 0.109956, 0.075049, 0.040143, 0.066323, 0.095993, 0.127409]
+"values": [0.127409, 0.176278, 0.228638, 0.191986, 0.153589, 0.120428, 0.080285, 0.045379, 0.069813, 0.097738, 0.127409, 0.171042, 0.221657, 0.18326, 0.144862, 0.109956, 0.075049, 0.040143, 0.06632299999999999, 0.095993, 0.127409]
 }
 tracks/108/type = "value"
 tracks/108/imported = false

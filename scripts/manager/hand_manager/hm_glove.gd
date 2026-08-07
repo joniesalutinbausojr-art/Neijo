@@ -8,6 +8,8 @@ var picked_place: CharacterRegistry.PlacePlantInCell = CharacterRegistry.PlacePl
 
 ## Plant type na kasalukuyang hawak (Null kung wala)
 var picked_plant_type: CharacterRegistry.PlantType = CharacterRegistry.PlantType.Null
+## HP ng hawak na plant noong kinuha (ipapanumbalik pag inilagay ulit)
+var picked_plant_hp: int = -1
 ## Pinanggalingang cell ng hawak na plant
 var source_cell: PlantCell = null
 ## Cell na kinatatapatan ng mouse ngayon
@@ -51,6 +53,7 @@ func _try_pick_up(plant_cell: PlantCell):
 
 	picked_place = place
 	picked_plant_type = plant.plant_type
+	picked_plant_hp = plant.hp_component.curr_hp
 	source_cell = plant_cell
 
 	plant.character_death_disappear()
@@ -69,7 +72,8 @@ func _try_place_down(target_cell: PlantCell):
 
 	## Parehong cell -> ibalik
 	if target_cell == source_cell:
-		source_cell.create_plant(picked_plant_type)
+		var restored_plant: Plant000Base = source_cell.create_plant(picked_plant_type)
+		_restore_hp(restored_plant)
 		_reset()
 		return
 
@@ -90,19 +94,42 @@ func _try_place_down(target_cell: PlantCell):
 
 		else:
 
-			source_cell.create_plant(picked_plant_type)
+			var restored_plant: Plant000Base = source_cell.create_plant(picked_plant_type)
+			_restore_hp(restored_plant)
 			_reset()
 			return
 
 	else:
 
-		target_cell.create_plant(picked_plant_type)
+		## Walang existing plant -> siguraduhing puwede talaga dito bago ilagay
+		## (hal. ice road na iniwan ng driver zombie, tubig, bubog, sementeryo, atbp.)
+		var target_condition: ResourcePlantCondition = Global.character_registry.get_plant_info(
+			picked_plant_type, CharacterRegistry.PlantInfoAttribute.PlantConditionResource
+		)
+
+		if not target_condition.judge_is_can_plant(target_cell, picked_plant_type):
+			## Hindi puwede dito -> ibalik na lang sa pinanggalingan
+			SoundManager.play_other_SFX("buzzer")
+			var restored_plant: Plant000Base = source_cell.create_plant(picked_plant_type)
+			_restore_hp(restored_plant)
+			_reset()
+			return
+
+		var restored_plant: Plant000Base = target_cell.create_plant(picked_plant_type)
+		_restore_hp(restored_plant)
 
 	_reset()
+
+## Ipanumbalik ang HP ng nilipat na plant (kung mayroon), pagkatapos i-clear ang naka-imbak na value
+func _restore_hp(plant: Plant000Base):
+	if is_instance_valid(plant) and picked_plant_hp > 0:
+		plant.hp_component.curr_hp = picked_plant_hp
+	picked_plant_hp = -1
 
 ## I-clear yung state ng hawak na plant
 func _reset():
 	picked_plant_type = CharacterRegistry.PlantType.Null
+	picked_plant_hp = -1
 	source_cell = null
 	real_glove.clear_held_plant()
 
@@ -110,7 +137,8 @@ func _reset():
 func exit_status():
 	if picked_plant_type != CharacterRegistry.PlantType.Null and is_instance_valid(source_cell):
 		## Ibalik yung hawak na plant sa pinanggalingan
-		source_cell.create_plant(picked_plant_type)
+		var restored_plant: Plant000Base = source_cell.create_plant(picked_plant_type)
+		_restore_hp(restored_plant)
 	_reset()
 	real_glove.change_is_using(false)
 	ui_glove.ui_glove_appear()

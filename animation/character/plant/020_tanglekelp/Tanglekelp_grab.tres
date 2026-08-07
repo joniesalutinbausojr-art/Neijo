@@ -1,4 +1,4 @@
-[gd_resource type="Animation" load_steps=8 format=3 uid="uid://d4j14at5jjq0x"]
+[gd_resource type="Animation" format=3 uid="uid://d4j14at5jjq0x"]
 
 [ext_resource type="Texture2D" uid="uid://ckjv486u35x8i" path="res://assets/reanim/Tanglekelp_grab_back1.png" id="10_fuck"]
 [ext_resource type="Texture2D" uid="uid://cpaau5e20yh4i" path="res://assets/reanim/Tanglekelp_grab_back3.png" id="12_fuck"]

@@ -1,4 +1,4 @@
-[gd_resource type="Animation" load_steps=23 format=3 uid="uid://chy5akc5wahu7"]
+[gd_resource type="Animation" format=3 uid="uid://chy5akc5wahu7"]
 
 [ext_resource type="Texture2D" uid="uid://c56eve4tvxpgc" path="res://assets/reanim/Zombie_innerarm_hand.png" id="0_fuck"]
 [ext_resource type="Texture2D" uid="uid://b0dn23onkha70" path="res://assets/reanim/Zombie_ladder_innerleg_foot.png" id="1_fuck"]
@@ -818,7 +818,7 @@ tracks/65/keys = {
 "times": PackedFloat32Array(0, 0.083333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.022689, 0.048869, 0.071558, 0.095993, 0.118682, 0.146608, 0.066323, -0.003491, -0.08203, -0.162316, -0.251327]
+"values": [0.0, 0.022689, 0.048869, 0.071558, 0.095993, 0.118682, 0.146608, 0.06632299999999999, -0.003491, -0.08203, -0.162316, -0.251327]
 }
 tracks/66/type = "value"
 tracks/66/imported = false
@@ -1574,7 +1574,7 @@ tracks/128/keys = {
 "times": PackedFloat32Array(0, 0.083333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.296706, 0.459022, 0.626573, 0.792379, 0.958186, 1.12399, 1.28805, 1.1397, 1.16413, 1.2898, 0.98262, 0.753982]
+"values": [0.296706, 0.459022, 0.626573, 0.7923789999999999, 0.958186, 1.12399, 1.28805, 1.1397, 1.16413, 1.2898, 0.98262, 0.753982]
 }
 tracks/129/type = "value"
 tracks/129/imported = false

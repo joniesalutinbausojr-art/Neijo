@@ -1,4 +1,4 @@
-[gd_resource type="Animation" load_steps=13 format=3 uid="uid://cfirlme8cxkh4"]
+[gd_resource type="Animation" format=3 uid="uid://cfirlme8cxkh4"]
 
 [ext_resource type="Texture2D" uid="uid://b4vbh746dhyol" path="res://assets/reanim/Zombie_pogo_innerarm_lower.png" id="1_fuck"]
 [ext_resource type="Texture2D" uid="uid://cwegs0y3yh745" path="res://assets/reanim/Zombie_pogo_innerarm_upper.png" id="2_fuck"]
@@ -712,7 +712,7 @@ tracks/57/keys = {
 "times": PackedFloat32Array(0, 0.083333, 0.166667, 0.208334, 0.25, 0.333334, 0.416667, 0.5, 0.583334, 0.666667, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.53058, 0.581195, 0.6353, 0.68766, 0.74002, 0.792379, 0.74002, 0.68766, 0.6353, 0.581195, 0.53058]
+"values": [0.53058, 0.581195, 0.6353, 0.68766, 0.74002, 0.7923789999999999, 0.74002, 0.68766, 0.6353, 0.581195, 0.53058]
 }
 tracks/58/type = "value"
 tracks/58/imported = false

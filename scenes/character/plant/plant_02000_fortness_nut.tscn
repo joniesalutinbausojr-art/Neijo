@@ -138,7 +138,20 @@ script = ExtResource("2_k62tb")
 bowling_bullet_scene = ExtResource("3_cayd7")
 bowling_interval = 10.0
 plant_type = 51
-node2d_detect_in_slope = [null, null]
+init_be_attack_status = null
+is_sleep_in_day = null
+is_can_ladder = null
+is_sleeping = null
+is_garden_aquarium = null
+direction_x_root = null
+direction_x_body = null
+random_speed_range = null
+is_death = null
+is_idle = null
+is_show = null
+character_init_type = null
+
+node2d_detect_in_slope = [NodePath("HurtBoxComponent/HurtBoxDetection"), NodePath("Area2DStopJump")]
 
 [node name="Shadow" parent="." index="0"]
 position = Vector2(-12.999993, -3)

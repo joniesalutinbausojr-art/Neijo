@@ -301,7 +301,6 @@ script_list_meta = {
 "res://scripts/resources/plant_condition/condition_012_grave_buster.gd": [-1, -1],
 "res://scripts/resources/plant_condition/condition_017_lily_pad.gd": [-1, -1],
 "res://scripts/resources/plant_condition/condition_02000_fortness_nut.gd": [-1, -1],
-"res://scripts/resources/plant_condition/condition_02001_solara.gd": [-1, -1],
 "res://scripts/resources/plant_condition/condition_036_coffee_bean.gd": [-1, -1],
 "res://scripts/resources/plant_condition/condition_048_CobCannon.gd": [-1, -1],
 "res://scripts/resources/plant_condition/condition_050_niejo.gd": [-1, -1],

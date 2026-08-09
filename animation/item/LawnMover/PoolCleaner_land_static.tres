@@ -1,4 +1,4 @@
-[gd_resource type="Animation" load_steps=7 format=3 uid="uid://bkdw0mcstrdlw"]
+[gd_resource type="Animation" format=3 uid="uid://bkdw0mcstrdlw"]
 
 [ext_resource type="Texture2D" uid="uid://d2je1pntfgimf" path="res://assets/reanim/PoolCleaner_wheel.png" id="1_test4"]
 [ext_resource type="Texture2D" uid="uid://dqkdqqq613r0c" path="res://assets/reanim/PoolCleaner_body1.png" id="2_wu8wg"]

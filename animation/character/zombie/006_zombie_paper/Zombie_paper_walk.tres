@@ -1,4 +1,4 @@
-[gd_resource type="Animation" load_steps=18 format=3 uid="uid://cb007pwcaukj7"]
+[gd_resource type="Animation" format=3 uid="uid://cb007pwcaukj7"]
 
 [ext_resource type="Texture2D" uid="uid://ckjdgi4ef8i3h" path="res://assets/reanim/Zombie_paper_rightarm_upper.png" id="0_fuck"]
 [ext_resource type="Texture2D" uid="uid://cjx7s4s14d5r3" path="res://assets/reanim/Zombie_paper_lowerbody2.png" id="2_fuck"]

@@ -8,11 +8,11 @@ var RECIPES = [
 	{
 		"ordered": false,
 		"plants":[
-			CharacterRegistry.PlantType.P004WallNut,
-			CharacterRegistry.PlantType.P004WallNut,
-			CharacterRegistry.PlantType.P004WallNut,
+			CharacterRegistry.PlantType.P002SunFlower,
+			CharacterRegistry.PlantType.P002SunFlower,
+			CharacterRegistry.PlantType.P002SunFlower,
 		],
-		"reward":CharacterRegistry.PlantType.P003CherryBomb,
+		"reward":CharacterRegistry.PlantType.P02001Solara, 
 	},
 
 	# Wall Tall Wall

@@ -1,4 +1,4 @@
-[gd_resource type="Animation" load_steps=26 format=3 uid="uid://bx0s701o8nyi"]
+[gd_resource type="Animation" format=3 uid="uid://bx0s701o8nyi"]
 
 [ext_resource type="Texture2D" uid="uid://c7cjwc2v85fq8" path="res://assets/reanim/Zombie_dolphinrider_innerarm_lower.png" id="1_fuck"]
 [ext_resource type="Texture2D" uid="uid://7rp63r7hf0ll" path="res://assets/reanim/Zombie_dolphinrider_innerarm_upper.png" id="2_fuck"]

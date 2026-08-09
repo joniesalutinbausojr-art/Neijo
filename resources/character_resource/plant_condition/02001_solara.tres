@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ResourcePlantConditionSolara" format=3 uid="uid://dtb5q7jve42v5"]
+
+[ext_resource type="Script" uid="uid://cf443nowq6wc3" path="res://scripts/resources/plant_condition/condition_02001_solara.gd" id="1_5fixv"]
+
+[resource]
+script = ExtResource("1_5fixv")
+is_special_plants = true

@@ -1,4 +1,4 @@
-[gd_resource type="Animation" load_steps=3 format=3 uid="uid://6n7yf3akvtw1"]
+[gd_resource type="Animation" format=3 uid="uid://6n7yf3akvtw1"]
 
 [ext_resource type="Texture2D" uid="uid://chp5oagqacrw2" path="res://assets/reanim/PuffShroom_blink1.png" id="4_fuck"]
 [ext_resource type="Texture2D" uid="uid://b3ddxb6ikwr4q" path="res://assets/reanim/PuffShroom_blink2.png" id="5_fuck"]

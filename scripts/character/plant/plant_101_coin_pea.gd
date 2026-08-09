@@ -1,12 +1,10 @@
-extends Plant000Base
+extends PlantFusionBase
 class_name Plant101CoinPea
 
 
 @onready var attack_component: AttackComponentBulletBase = $AttackComponent
 @onready var create_coin_component: CreateCoinComponent = $CreateCoinComponent
 
-## Initialize normal battle character signal connections
-func ready_norm_signal_connect():
+func _ready() -> void:
 	super()
-	signal_update_speed.connect(attack_component.owner_update_speed)
-	signal_update_speed.connect(create_coin_component.owner_update_speed)
+	fusion_components = [attack_component, create_coin_component]

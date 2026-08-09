@@ -33,6 +33,7 @@ anim_offset_max = 1.0
 script = ExtResource("2_r23ue")
 drop_coin_rate = [0.7, 0.25, 0.05]
 coin_spawn_chance = 0.4
+attack_value = 80
 is_can_up = true
 bullet_type = 18
 

@@ -31,6 +31,7 @@ var CradBgMap:Dictionary[E_CardBg, Resource] = {
 ## Special na plant type -> card bg mapping (dito idadagdag ang bawat bagong special plant)
 var PlantTypeCardBgMap:Dictionary[CharacterRegistry.PlantType, E_CardBg] = {
 		CharacterRegistry.PlantType.P050Niejo: E_CardBg.CB04Gold,
+		CharacterRegistry.PlantType.P02000FortnessNut: E_CardBg.CB05Red,
 		}
 
 

@@ -1,4 +1,4 @@
-[gd_resource type="Animation" load_steps=12 format=3 uid="uid://cyk4n1jx3ibdw"]
+[gd_resource type="Animation" format=3 uid="uid://cyk4n1jx3ibdw"]
 
 [ext_resource type="Texture2D" uid="uid://dtjl52p7idhjd" path="res://assets/reanim/PeaShooter_headleaf_farthest.png" id="1_ea7vu"]
 [ext_resource type="Texture2D" uid="uid://x5uxjnl5pjv0" path="res://assets/reanim/PeaShooter_headleaf_3rdfarthest.png" id="2_noigd"]

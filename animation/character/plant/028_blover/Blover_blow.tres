@@ -1,4 +1,4 @@
-[gd_resource type="Animation" load_steps=8 format=3 uid="uid://dfbime8s6x1lg"]
+[gd_resource type="Animation" format=3 uid="uid://dfbime8s6x1lg"]
 
 [ext_resource type="Texture2D" uid="uid://cphyi585kac3c" path="res://assets/reanim/Blover_dirt_back.png" id="0_fuck"]
 [ext_resource type="Texture2D" uid="uid://du4g4ioiybxm5" path="res://assets/reanim/Blover_stem2.png" id="1_fuck"]
@@ -718,7 +718,7 @@ tracks/58/keys = {
 "times": PackedFloat32Array(0, 0.083333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667, 1, 1.08333, 1.16667, 1.25, 1.33333, 1.41667, 1.5, 1.58333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [4.19228, 4.19577, 4.19752, 4.20101, 4.2045, 4.20799, 4.21148, 4.20973, 4.20799, 4.19752, 4.18879, 4.88518, 5.58854, 6.28318, 6.98132, 7.67945, 8.37758, 9.07222, 9.77559, 10.472]
+"values": [4.19228, 4.1957700000000004, 4.19752, 4.20101, 4.2045, 4.20799, 4.21148, 4.20973, 4.20799, 4.19752, 4.18879, 4.88518, 5.58854, 6.28318, 6.98132, 7.67945, 8.37758, 9.07222, 9.77559, 10.472]
 }
 tracks/59/type = "value"
 tracks/59/imported = false

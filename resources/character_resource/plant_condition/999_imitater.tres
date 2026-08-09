@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ResourcePlantCondition" load_steps=2 format=3 uid="uid://cxe7tbdinlagl"]
+[gd_resource type="Resource" script_class="ResourcePlantCondition" format=3 uid="uid://cxe7tbdinlagl"]
 
 [ext_resource type="Script" uid="uid://lm6sv7e83ixs" path="res://scripts/resources/plant_condition/condition_000_plant_base.gd" id="1_bje6s"]
 

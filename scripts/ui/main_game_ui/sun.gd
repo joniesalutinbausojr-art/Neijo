@@ -2,7 +2,7 @@ extends Node2D
 class_name Sun
 
 ## Halaga ng sun kapag nakolekta
-@export var sun_value := 99999
+@export var sun_value := 25
 
 ## Gaano katagal mananatili ang sun sa screen
 @export var exist_time: float = 10.0
@@ -12,8 +12,8 @@ var spawn_sun_tween: Tween
 
 
 func _ready() -> void:
-	# Panatilihing normal ang laki ng Sun
-	scale = Vector2.ONE
+	# I-set ang laki base sa sun_value (25 = normal/default scale)
+	_sun_scale(sun_value)
 
 	# Hintayin ang exist time bago mawala
 	await get_tree().create_timer(exist_time).timeout
@@ -25,6 +25,11 @@ func _ready() -> void:
 func init_sun(curr_sun_value: int, pos: Vector2) -> void:
 	sun_value = curr_sun_value
 	position = pos
+
+
+func _sun_scale(new_sun_value: int) -> void:
+	var new_scale = new_sun_value / 25.0
+	scale = Vector2(new_scale, new_scale)
 
 
 func _on_button_pressed() -> void:

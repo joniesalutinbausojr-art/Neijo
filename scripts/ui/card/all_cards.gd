@@ -53,6 +53,12 @@ func _ready() -> void:
 				card.sun_cost = Global.character_registry.ZombieInfo[card.card_zombie_type][CharacterRegistry.ZombieInfoAttribute.SunCost]
 				all_zombie_card_prefabs[card.card_zombie_type] = card
 				zombie_card_ids[card.card_zombie_type] = zombie_i
+				
+				print("=== AllCards ready ===")
+	print("Has Fortness prefab: ", all_plant_card_prefabs.has(CharacterRegistry.PlantType.P02000FortnessNut))
+	print("Has Fortness id: ", plant_card_ids.has(CharacterRegistry.PlantType.P02000FortnessNut))
+	print("Fortness id value: ", plant_card_ids.get(CharacterRegistry.PlantType.P02000FortnessNut, -1))
+	print("Keys: ", plant_card_ids.keys())
 
 func init_card(card:CardBase, card_init_para:Dictionary):
 	card.card_id = card_init_para[CardBase.E_CInitAttr.CardId]

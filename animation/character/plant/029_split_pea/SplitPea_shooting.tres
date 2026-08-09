@@ -1,4 +1,4 @@
-[gd_resource type="Animation" load_steps=5 format=3 uid="uid://cjdntixs87bgb"]
+[gd_resource type="Animation" format=3 uid="uid://cjdntixs87bgb"]
 
 [ext_resource type="Texture2D" uid="uid://b00drwni3ja82" path="res://assets/reanim/PeaShooter_Head.png" id="8_fuck"]
 [ext_resource type="Texture2D" uid="uid://txlm4fwvygkx" path="res://assets/reanim/PeaShooter_mouth.png" id="9_fuck"]

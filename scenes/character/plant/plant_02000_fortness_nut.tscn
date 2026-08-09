@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c5cke4cm02um7" path="res://scenes/character/plant/plant_000_base.tscn" id="1_4ql4v"]
 [ext_resource type="Script" uid="uid://dvs604kektg7k" path="res://scripts/character/plant/plant_02000_fortness_nut.gd" id="2_k62tb"]
+[ext_resource type="PackedScene" uid="uid://dpgtph7g2250n" path="res://scenes/bullet/bullet_1001_bowling.tscn" id="3_cayd7"]
 [ext_resource type="Texture2D" uid="uid://bokyy4o8t5uy7" path="res://assets/reanim/Giant_Fortness_Nut_1st_Degrade.png" id="3_k62tb"]
 [ext_resource type="Animation" uid="uid://du3y5epnga0u2" path="res://animation/character/plant/02000_fortness_nut/Fortness_face.tres" id="7_4ql4v"]
 [ext_resource type="Animation" uid="uid://bdgup5skf4suu" path="res://animation/character/plant/02000_fortness_nut/Fortness_idle.tres" id="8_dai7e"]
@@ -129,12 +130,19 @@ sprite_change = Array[NodePath]([NodePath("../Body/BodyCorrect/Fortness_idle")])
 sprite_change_texture = Array[Texture2D]([ExtResource("9_cayd7")])
 metadata/_custom_type_script = "uid://jl0nl4a234bc"
 
-[node name="Plant02000FortnessNut" unique_id=224325203 instance=ExtResource("1_4ql4v")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnut01"]
+size = Vector2(220, 140)
+
+[node name="Plant02000FortnessNut" unique_id=224325203 node_paths=PackedStringArray("node2d_detect_in_slope") instance=ExtResource("1_4ql4v")]
 script = ExtResource("2_k62tb")
+bowling_bullet_scene = ExtResource("3_cayd7")
+bowling_interval = 10.0
 plant_type = 51
+node2d_detect_in_slope = [null, null]
 
 [node name="Shadow" parent="." index="0"]
-position = Vector2(0, -5)
+position = Vector2(-12.999993, -3)
+scale = Vector2(2, 1.1111112)
 
 [node name="BodyCorrect" parent="Body" index="0"]
 unique_name_in_owner = true
@@ -177,5 +185,16 @@ parameters/TimeScale/scale = 1.0
 
 [node name="HpStageChangeComponent" type="Node2D" parent="." index="10" unique_id=1709842757]
 script = ExtResource("9_gwxby")
-boundary_value_hp = Array[int]([2666, 1333, 0])
+boundary_value_hp = Array[int]([13332, 6665, 0])
 body_change = Array[ExtResource("10_14cgs")]([SubResource("Resource_hev76"), SubResource("Resource_akyvq"), null])
+
+[node name="Area2DStopJump" type="Area2D" parent="." index="11" unique_id=1115883999]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DStopJump" index="0" unique_id=1619359999]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_fnut01")
+
+[connection signal="area_entered" from="Area2DStopJump" to="." method="_on_area_2d_stop_jump_area_entered"]

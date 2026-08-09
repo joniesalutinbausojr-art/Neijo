@@ -62,7 +62,9 @@ func judge_purple_card_can_plant(all_plant_cells, curr_plant_type:CharacterRegis
 ## 获取当前格子紫卡预种植植物
 ## 返回预种植植物,若当前植物格子可以种植紫卡,返回预种植紫卡,
 func get_preplant_purple(plant_cell:PlantCell, curr_plant_type:CharacterRegistry.PlantType) ->Plant000Base:
-	## 紫卡前置植物
+	## 紫卡前置植物(如果当前植物类型不在紫卡前置字典中,说明它根本不是紫卡植物,直接返回null,避免崩溃)
+	if not Global.character_registry.AllPrePlantPurple.has(curr_plant_type):
+		return null
 	var precondition_plant:CharacterRegistry.PlantType = Global.character_registry.AllPrePlantPurple[curr_plant_type]
 	## 当前格子存在前置种植植物
 	var condition_precondition_plant :ResourcePlantCondition = Global.character_registry.get_plant_info(precondition_plant, CharacterRegistry.PlantInfoAttribute.PlantConditionResource)

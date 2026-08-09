@@ -5,7 +5,8 @@
 
 [resource]
 script = ExtResource("1_ma3wb")
-zombie_multy = 20
+zombie_multy = 5
 zombie_refresh_types = Array[int]([1, 3, 4, 5, 24, 26, 13, 22, 6, 19, 20])
+start_sun = 200
 is_save_plant_on_pot_mode = true
 metadata/_custom_type_script = "uid://bjt3l56exxmdw"

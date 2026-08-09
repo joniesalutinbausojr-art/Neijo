@@ -1,4 +1,4 @@
-[gd_resource type="Animation" load_steps=5 format=3 uid="uid://du6mjid0siwe1"]
+[gd_resource type="Animation" format=3 uid="uid://du6mjid0siwe1"]
 
 [ext_resource type="Texture2D" uid="uid://b5v5vannbipgc" path="res://assets/reanim/FumeShroom_body.png" id="0_fuck"]
 [ext_resource type="Texture2D" uid="uid://bdecyr5u832mx" path="res://assets/reanim/FumeShroom_head.png" id="2_fuck"]

@@ -31,9 +31,10 @@ anim_offset_max = 1.0
 
 [node name="bullet_017_sun_pea" unique_id=1193625976 instance=ExtResource("1_iemed")]
 script = ExtResource("2_ixl8b")
-spawn_sun_value = 25
+spawn_sun_value = 15
 sun_spawn_offset = Vector2(20, 20)
 sun_spawn_chance = 0.4
+attack_value = 80
 is_can_up = true
 bullet_type = 17
 

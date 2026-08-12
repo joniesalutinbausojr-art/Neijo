@@ -28,6 +28,8 @@ enum BulletType{
 	
 	Bullet017SunPea,
 	Bullet018CoinPea, 
+	Bullet02002WarPeaSuper, 
+	Bullet02002WarPeaNorm, 
 
 
 	Bullet1001Bowling = 1001,		## 保龄球
@@ -72,6 +74,8 @@ enum AttackMode {
 	BulletType.Bullet016CobCannon :preload("res://scenes/bullet/bullet_016_cob_cannon.tscn"),
 	BulletType.Bullet017SunPea : preload("res://scenes/bullet/bullet_017_sun_pea.tscn"),
 	BulletType.Bullet018CoinPea : preload("res://scenes/bullet/bullet_018_coin_pea.tscn"),
+	BulletType.Bullet02002WarPeaNorm : preload("res://scenes/bullet/bullet_02002_war_pea_norm.tscn"), 
+	BulletType.Bullet02002WarPeaSuper : preload("res://scenes/bullet/bullet_02002_war_pea_super.tscn"), 
 }
 
 ## 获取子弹场景方法

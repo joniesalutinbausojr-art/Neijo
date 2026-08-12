@@ -30,11 +30,11 @@ var RECIPES = [
 	{
 		"ordered": true,
 		"plants":[
-			CharacterRegistry.PlantType.P002SunFlower,
-			CharacterRegistry.PlantType.P004WallNut,
-			CharacterRegistry.PlantType.P024TallNut,
+			CharacterRegistry.PlantType.P008PeaShooterDouble,
+			CharacterRegistry.PlantType.P019ThreePeater,
+			CharacterRegistry.PlantType.P008PeaShooterDouble,
 		],
-		"reward":CharacterRegistry.PlantType.P016DoomShroom,
+		"reward":CharacterRegistry.PlantType.P02002WarPea,
 	},
 
 ]

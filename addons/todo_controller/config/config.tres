@@ -6,6 +6,11 @@
 script = ExtResource("1_f6quq")
 black_dirs = ["addons", "res://addons"]
 script_list_meta = {
+"res://android/build/src/instrumented/assets/main.gd": [-1, -1],
+"res://android/build/src/instrumented/assets/test/android_plugin/signal_tests.gd": [-1, -1],
+"res://android/build/src/instrumented/assets/test/base_test.gd": [-1, -1],
+"res://android/build/src/instrumented/assets/test/file_access/file_access_tests.gd": [-1, -1],
+"res://android/build/src/instrumented/assets/test/javaclasswrapper/java_class_wrapper_tests.gd": [-1, -1],
 "res://scenes/test/test.gd": [-1, -1],
 "res://scripts/Almanac/almanac_zombie_card.gd": [-1, -1],
 "res://scripts/Almanac/main_almanac.gd": [-1, -1],
@@ -43,6 +48,8 @@ script_list_meta = {
 "res://scripts/bullet/bullet_016_cob_cannon.gd": [-1, -1],
 "res://scripts/bullet/bullet_017_sun_pea.gd": [-1, -1],
 "res://scripts/bullet/bullet_018_coin_pea.gd": [-1, -1],
+"res://scripts/bullet/bullet_02002_war_pea.gd": [-1, -1],
+"res://scripts/bullet/bullet_02002_war_pea_super.gd": [-1, -1],
 "res://scripts/bullet/bullet_1001_bowling.gd": [-1, -1],
 "res://scripts/bullet/bullet_1002_bowling_bomb.gd": [-1, -1],
 "res://scripts/bullet/bullet_1003_bowling_big.gd": [-1, -1],
@@ -141,6 +148,10 @@ script_list_meta = {
 "res://scripts/character/plant/plant_019_three_peater.gd": [-1, -1],
 "res://scripts/character/plant/plant_02000_fortness_nut.gd": [-1, -1],
 "res://scripts/character/plant/plant_02001_Solara.gd": [-1, -1],
+<<<<<<< Updated upstream
+=======
+"res://scripts/character/plant/plant_02002_war_pea.gd": [-1, -1],
+>>>>>>> Stashed changes
 "res://scripts/character/plant/plant_020_tanglekelp.gd": [-1, -1],
 "res://scripts/character/plant/plant_021_jalapeno.gd": [-1, -1],
 "res://scripts/character/plant/plant_022_caltrop.gd": [-1, -1],
@@ -301,6 +312,11 @@ script_list_meta = {
 "res://scripts/resources/plant_condition/condition_012_grave_buster.gd": [-1, -1],
 "res://scripts/resources/plant_condition/condition_017_lily_pad.gd": [-1, -1],
 "res://scripts/resources/plant_condition/condition_02000_fortness_nut.gd": [-1, -1],
+<<<<<<< Updated upstream
+=======
+"res://scripts/resources/plant_condition/condition_02001_solara.gd": [-1, -1],
+"res://scripts/resources/plant_condition/condition_02002_war_pea.gd": [-1, -1],
+>>>>>>> Stashed changes
 "res://scripts/resources/plant_condition/condition_036_coffee_bean.gd": [-1, -1],
 "res://scripts/resources/plant_condition/condition_048_CobCannon.gd": [-1, -1],
 "res://scripts/resources/plant_condition/condition_050_niejo.gd": [-1, -1],

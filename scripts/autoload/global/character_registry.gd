@@ -80,6 +80,10 @@ enum PlantType {
 	# Titan Plants
 	P02000FortnessNut, 
 	P02001Solara, 
+<<<<<<< Updated upstream
+=======
+	P02002WarPea, 
+>>>>>>> Stashed changes
 
 	## 模仿者
 	P999Imitater = 999,
@@ -572,6 +576,16 @@ const PlantInfo = {
 		PlantInfoAttribute.PlantConditionResource : preload("res://resources/character_resource/plant_condition/02001_solara.tres"),
 		PlantInfoAttribute.PlantScenes : preload("res://scenes/character/plant/plant_02001_solara.tscn")
 		},
+<<<<<<< Updated upstream
+=======
+	PlantType.P02002WarPea: {
+		PlantInfoAttribute.PlantName: "WarPea",
+		PlantInfoAttribute.CoolTime: 30.0,
+		PlantInfoAttribute.SunCost: 125,
+		PlantInfoAttribute.PlantConditionResource : preload("res://resources/character_resource/plant_condition/02002_war_pea.tres"),
+		PlantInfoAttribute.PlantScenes : preload("res://scenes/character/plant/plant_02002_war_pea.tscn")
+		},
+>>>>>>> Stashed changes
 	
 
 	## 模仿者

@@ -179,6 +179,14 @@ func mouse_exit(_plant_cell:PlantCell):
 ## 点击种植植物\僵尸
 func click_cell(plant_cell:PlantCell):
 	if is_shadow_in_cell:
+		## FIX: huling safety check bago mag-plant.
+		## Kung sa panahong ito ay hindi na sapat ang sun (halimbawa,
+		## dahil nabawasan na ito sa ibang paraan o paulit-ulit na
+		## na-click ang parehong card), huwag ituloy ang pagtatanim.
+		if is_instance_valid(curr_card) and not curr_card.is_sun_enough:
+			SoundManager.play_other_SFX("buzzer")
+			return
+
 		if curr_card.card_plant_type != 0:
 			plant_cell.create_plant(curr_card.card_plant_type, curr_card.is_imitater)
 		else:
@@ -202,6 +210,13 @@ func click_cell(plant_cell:PlantCell):
 		curr_card.signal_card_use_end.emit()
 		if is_mode_column:
 			_click_cell_column(plant_cell)
+
+		## FIX: i-clear agad ang hawak na card pagkatapos gamitin.
+		## Bago nito, walang tumatawag na _clear_curr_data() dito, kaya
+		## nananatiling "hawak" ang parehong card at pwede pang muling
+		## gamitin sa susunod na click_cell() nang hindi na-recheck ang
+		## sun balance — dito nagmumula ang negative sun bug.
+		_clear_curr_data()
 
 ## 退出当前状态
 func exit_status():

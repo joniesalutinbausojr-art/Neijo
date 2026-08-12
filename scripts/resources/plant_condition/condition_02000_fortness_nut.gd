@@ -1,6 +1,7 @@
 extends ResourcePlantConditionTitan
 class_name ResourcePlantConditionFortnessNut
 
+<<<<<<< Updated upstream
 ## 堡垒坚果(Titan/巨型植物)种植判定
 ## 需要锚点格子 + 一个相邻格子(同一行内)都空闲才能种植
 ## 优先占用右侧(朝僵尸方向)格子，若不可用则占用左侧(朝房子方向)格子
@@ -39,3 +40,7 @@ func _cell_free_for_titan(cell: PlantCell) -> bool:
 	return cell.can_common_plant \
 		and (plant_condition & cell.curr_condition) != 0 \
 		and not is_instance_valid(cell.plant_in_cell[CharacterRegistry.PlacePlantInCell.Norm])
+=======
+# empty for now
+# ilagay dito ang special planting rules kapag kailangan
+>>>>>>> Stashed changes

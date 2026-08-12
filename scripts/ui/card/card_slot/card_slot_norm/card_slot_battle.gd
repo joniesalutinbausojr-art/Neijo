@@ -14,11 +14,14 @@ var curr_cards : Array[Card]
 ## 阳光值
 var sun_value:
 	set(value):
-		sun_value = value
-		curr_sun_value.text = str(value)
+		## FIX: hindi na kailanman pababayaang bumaba ang 0 (walang
+		## negative sun). Anumang paraan ng deduction, dito na huling
+		## pinipigilan.
+		sun_value = max(value, 0)
+		curr_sun_value.text = str(sun_value)
 
 		for card in curr_cards:
-			card.judge_sun_enough(value)
+			card.judge_sun_enough(sun_value)
 
 func _ready() -> void:
 	Global.config_service.signal_change_disappear_spare_card_placeholder.connect(judge_disappear_add_card_bar)
@@ -65,6 +68,14 @@ func start_next_game_card_slot_battle_update():
 
 ## 卡片种植后信号调用函数
 func card_use_end(card:Card):
+	## FIX: huling gate bago mag-deduct. Kung sa kahit anong dahilan
+	## (timing, double-emit, atbp.) ay hindi na sapat ang sun sa
+	## sandaling ito, huwag nang ituloy ang deduction/cooldown.
+	## Ito ang huling linya ng depensa laban sa negative sun.
+	if sun_value < card.sun_cost:
+		push_warning("card_use_end: hindi sapat ang sun para kay %s, hindi ideduct." % card.name)
+		return
+
 	## 减少阳光，卡片冷却
 	sun_value = sun_value - card.sun_cost
 	card.card_cool()

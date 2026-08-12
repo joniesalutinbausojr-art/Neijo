@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://ysajcyiwrdnk" path="res://assets/image/particles/ExplosionPowie.png" id="24_2gy5r"]
 [ext_resource type="Texture2D" uid="uid://nnp13qryaqjx" path="res://assets/image/particles/ExplosionCloud.png" id="24_ql0xv"]
 [ext_resource type="Shader" uid="uid://cikju0ectkkms" path="res://shaders/Mypartical.gdshader" id="25_qq8mq"]
-[ext_resource type="PackedScene" uid="uid://cjuiaaq33o5aa" path="res://scenes/ui/all_cards/card.tscn" id="27_ql0xv"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q5e28"]
 _data = {
@@ -447,5 +446,3 @@ process_material = SubResource("ShaderMaterial_vp07b")
 
 [node name="ExplosiveFont" type="Sprite2D" parent="BombComponent/BombEffect" index="2" unique_id=1908322346]
 texture = ExtResource("24_2gy5r")
-
-[node name="Card" parent="BombComponent" index="2" unique_id=578466002 instance=ExtResource("27_ql0xv")]

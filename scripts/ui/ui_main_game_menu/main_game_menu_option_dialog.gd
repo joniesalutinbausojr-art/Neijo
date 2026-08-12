@@ -90,4 +90,3 @@ func _unrealized():
 ## 出现控制台
 func _on_button_console_pressed() -> void:
 	canvas_layer_console.appear_canvas_layer_control()
-

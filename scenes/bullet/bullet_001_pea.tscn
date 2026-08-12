@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://gncshyivuwtb"]
+[gd_scene format=3 uid="uid://gncshyivuwtb"]
 
 [ext_resource type="PackedScene" uid="uid://cit8bsc5op7f0" path="res://scenes/bullet/bullet_000_linear_base.tscn" id="1_hs85o"]
 [ext_resource type="Texture2D" uid="uid://c4rbih2yuv0vx" path="res://assets/image/projectile/ProjectilePea.png" id="2_0kdi0"]
@@ -28,7 +28,7 @@ gravity = Vector3(0, 100, 0)
 scale_curve = SubResource("CurveTexture_hs85o")
 anim_offset_max = 1.0
 
-[node name="Bullet001Pea" instance=ExtResource("1_hs85o")]
+[node name="Bullet001Pea" unique_id=303028928 instance=ExtResource("1_hs85o")]
 is_can_up = true
 bullet_type = 1
 
@@ -38,11 +38,11 @@ texture = ExtResource("2_0kdi0")
 [node name="BulletEffect" parent="." index="2"]
 script = ExtResource("3_womrk")
 
-[node name="Splats" type="Sprite2D" parent="BulletEffect" index="0"]
+[node name="Splats" type="Sprite2D" parent="BulletEffect" index="0" unique_id=964450308]
 texture = ExtResource("4_og4bd")
 hframes = 4
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="BulletEffect/AllParticles2D" index="0"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="BulletEffect/AllParticles2D" index="0" unique_id=1554257793]
 material = SubResource("CanvasItemMaterial_jt8vs")
 emitting = false
 amount = 10
@@ -50,3 +50,6 @@ texture = ExtResource("5_jvdm4")
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_m5utd")
+
+[node name="MovementComponent" parent="." index="4"]
+visible = false

@@ -591,6 +591,12 @@
 [ext_resource type="Texture2D" uid="uid://chk8ojme1d2nr" path="res://assets/reanim/Zombie_dolphinrider_outerarm_lower.png" id="392_10mhf"]
 [ext_resource type="Texture2D" uid="uid://pm1gkh1h3jpm" path="res://assets/reanim/Solara_SideFrontLeaf.png" id="392_mlr8r"]
 [ext_resource type="Texture2D" uid="uid://dso348ywf210h" path="res://assets/reanim/Zombie_dolphinrider_outerarm_upper.png" id="393_bh1la"]
+[ext_resource type="Texture2D" uid="uid://x220ovlimyhx" path="res://assets/reanim/War_pea_wood.png" id="393_mlr8r"]
+[ext_resource type="Texture2D" uid="uid://dhha2cue71rid" path="res://assets/reanim/War_pea_stem1.png" id="394_10mhf"]
+[ext_resource type="Texture2D" uid="uid://lvq4la56f647" path="res://assets/reanim/War_pea_head.png" id="395_bh1la"]
+[ext_resource type="Texture2D" uid="uid://bu1qiw0sytf7p" path="res://assets/reanim/War_pea_stem2.png" id="396_qpl0k"]
+[ext_resource type="Texture2D" uid="uid://cdueggusqkpx6" path="res://assets/reanim/War_pea_helmet.png" id="397_hnpw6"]
+[ext_resource type="Texture2D" uid="uid://dtnd4vbpffdtg" path="res://assets/reanim/War_pea_wheel.png" id="398_put5c"]
 [ext_resource type="Texture2D" uid="uid://bpwq05kghn85" path="res://assets/reanim/Zombie_jackbox_innerleg_foot.png" id="444_7f486"]
 [ext_resource type="Texture2D" uid="uid://c0xi6knhqwb5t" path="res://assets/reanim/Zombie_jackbox_outerarm_upper.png" id="445_deuj6"]
 [ext_resource type="Texture2D" uid="uid://cwce4k76w0sgw" path="res://assets/reanim/Zombie_jackbox_innerleg_lower.png" id="445_ih4no"]
@@ -944,6 +950,8 @@ all_plant_card_prefabs = {
 49: NodePath("PlantCards2/Card4"),
 50: NodePath("PlantCards2/Card5"),
 51: NodePath("PlantCards3/Card"),
+52: NodePath("PlantCards3/Card2"),
+53: NodePath("PlantCards3/Card3"),
 1001: NodePath("PlantCards2/Card"),
 1002: NodePath("PlantCards2/Card2"),
 1003: NodePath("PlantCards2/Card3")
@@ -1028,6 +1036,11 @@ plant_card_ids = Dictionary[int, int]({
 49: 51,
 50: 52,
 51: 53,
+<<<<<<< Updated upstream
+=======
+52: 54,
+53: 55,
+>>>>>>> Stashed changes
 1001: 48,
 1002: 49,
 1003: 50
@@ -6689,7 +6702,11 @@ texture = ExtResource("385_45g8r")
 layout_mode = 2
 card_id = 54
 card_plant_type = 52
+<<<<<<< Updated upstream
 curr_card_gb = 6
+=======
+curr_card_gb = 4
+>>>>>>> Stashed changes
 cool_time = 30.0
 sun_cost = 125
 
@@ -6741,6 +6758,72 @@ position = Vector2(3.9999228, -12.750017)
 scale = Vector2(0.05, 0.054)
 texture = ExtResource("392_mlr8r")
 
+<<<<<<< Updated upstream
+=======
+[node name="Card3" parent="PlantCards3" unique_id=60532760 instance=ExtResource("2_5pqky")]
+layout_mode = 2
+card_id = 55
+card_plant_type = 53
+curr_card_gb = 4
+cool_time = 30.0
+sun_cost = 125
+
+[node name="CardBg" parent="PlantCards3/Card3" index="0"]
+texture = ExtResource("384_b70e6")
+
+[node name="Cost" parent="PlantCards3/Card3/CardBg" index="0"]
+visible = false
+text = "50"
+
+[node name="CharacterStatic" parent="PlantCards3/Card3/CardBg" index="1"]
+position = Vector2(26, 33)
+
+[node name="02002WarPea" type="Node2D" parent="PlantCards3/Card3/CardBg/CharacterStatic" index="0" unique_id=33322096]
+position = Vector2(1, 14)
+scale = Vector2(0.5, 0.5)
+
+[node name="Body" type="Node2D" parent="PlantCards3/Card3/CardBg/CharacterStatic/02002WarPea" unique_id=1154664504]
+
+[node name="War_Pea_Wood2" type="Sprite2D" parent="PlantCards3/Card3/CardBg/CharacterStatic/02002WarPea/Body" unique_id=1844669078]
+position = Vector2(0, -34)
+scale = Vector2(0.057, 0.06200001)
+texture = ExtResource("393_mlr8r")
+
+[node name="War_Pea_Stem2" type="Sprite2D" parent="PlantCards3/Card3/CardBg/CharacterStatic/02002WarPea/Body" unique_id=1996346381]
+position = Vector2(-16, -44)
+scale = Vector2(0.05, 0.054)
+texture = ExtResource("394_10mhf")
+
+[node name="War_Pea_Head" type="Sprite2D" parent="PlantCards3/Card3/CardBg/CharacterStatic/02002WarPea/Body" unique_id=1914312969]
+position = Vector2(3.0994415e-05, -40.000004)
+scale = Vector2(0.05, 0.054)
+texture = ExtResource("395_bh1la")
+
+[node name="War_Pea_Stem" type="Sprite2D" parent="PlantCards3/Card3/CardBg/CharacterStatic/02002WarPea/Body/War_Pea_Head" unique_id=1445634815]
+position = Vector2(-280, 74.073975)
+texture = ExtResource("396_qpl0k")
+
+[node name="War_Pea_Helmet" type="Sprite2D" parent="PlantCards3/Card3/CardBg/CharacterStatic/02002WarPea/Body" unique_id=1537174611]
+position = Vector2(-11.9999695, -43.999992)
+scale = Vector2(0.057, 0.06200001)
+texture = ExtResource("397_hnpw6")
+
+[node name="War_Pea_Wood" type="Sprite2D" parent="PlantCards3/Card3/CardBg/CharacterStatic/02002WarPea/Body" unique_id=2062652774]
+position = Vector2(-1.9999695, -19.999994)
+scale = Vector2(0.057, 0.06200001)
+texture = ExtResource("393_mlr8r")
+
+[node name="War_Pea_Wheel" type="Sprite2D" parent="PlantCards3/Card3/CardBg/CharacterStatic/02002WarPea/Body" unique_id=90729843]
+position = Vector2(-23.99997, -12.000002)
+scale = Vector2(0.057, 0.056000005)
+texture = ExtResource("398_put5c")
+
+[node name="War_Pea_Wheel2" type="Sprite2D" parent="PlantCards3/Card3/CardBg/CharacterStatic/02002WarPea/Body" unique_id=1537623535]
+position = Vector2(14.0000305, -12.000002)
+scale = Vector2(0.057, 0.056000005)
+texture = ExtResource("398_put5c")
+
+>>>>>>> Stashed changes
 [node name="ZombieCards" type="GridContainer" parent="." unique_id=542680027]
 unique_name_in_owner = true
 layout_mode = 0
@@ -11950,6 +12033,10 @@ layout_mode = 1
 [editable path="PlantCards2/Card5"]
 [editable path="PlantCards3/Card"]
 [editable path="PlantCards3/Card2"]
+<<<<<<< Updated upstream
+=======
+[editable path="PlantCards3/Card3"]
+>>>>>>> Stashed changes
 [editable path="ZombieCards/Card1"]
 [editable path="ZombieCards/Card2"]
 [editable path="ZombieCards/Card3"]

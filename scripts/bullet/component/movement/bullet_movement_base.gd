@@ -13,4 +13,3 @@ func _ready() -> void:
 ## return [bool]: 是否更新位置成功，若到达最后，更新失败
 func physics_process_bullet_move(_delta: float) -> bool:
 	return true
-

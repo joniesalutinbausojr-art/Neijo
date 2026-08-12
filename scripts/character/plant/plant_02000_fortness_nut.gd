@@ -3,6 +3,7 @@ class_name Plant02000FortnessNut
 
 @onready var hp_stage_change_component: HpStageChangeComponent = $HpStageChangeComponent
 
+<<<<<<< Updated upstream
 ## 注意:占用相邻格子、击退僵尸、免疫压扁等逻辑均已在父类 PlantTitanBase 中实现
 ## (ResourcePlantConditionFortnessNut 继承自 ResourcePlantConditionTitan，
 ##  因此父类的 _setup_titan_occupation() 可以直接识别并使用)
@@ -31,17 +32,55 @@ func ready_norm():
 		global_position.x += plant_cell.size.x / 2.0 * direction_sign
 	else:
 		push_error("FortnessNut: 找不到可占用的相邻格子，种植判定与实际占用逻辑不一致")
+=======
+## Bowling Wall-Nut every 10 seconds
+@export var bowling_bullet_scene: PackedScene = preload("res://scenes/bullet/bullet_1001_bowling.tscn")
+@export var bowling_interval: float = 10.0
+
+var bullets: Node2D
+var bowling_timer: Timer
+
+func ready_norm():
+	super()                      # ito na ang nagse-setup ng titan occupation
+	bullets = Global.main_game.bullets
+	_setup_bowling_timer()
+>>>>>>> Stashed changes
 
 func ready_norm_signal_connect():
 	super()
 	hp_component.signal_hp_loss.connect(hp_stage_change_component.judge_body_change)
 
+<<<<<<< Updated upstream
 ## Pole vaulter / pogo stop (unique to Fortness for now)
 ## 撑杆跳/跳跳僵尸的检测区域进入时触发,让其无法跳过堡垒坚果(和高坚果同理)
+=======
+func _setup_bowling_timer() -> void:
+	bowling_timer = Timer.new()
+	bowling_timer.wait_time = bowling_interval
+	bowling_timer.one_shot = false
+	bowling_timer.autostart = true
+	add_child(bowling_timer)
+	bowling_timer.timeout.connect(_launch_bowling)
+
+func _launch_bowling() -> void:
+	if not is_instance_valid(self) or not is_instance_valid(bullets):
+		return
+
+	var bullet: Bullet000Base = bowling_bullet_scene.instantiate()
+	var bullet_paras = {
+		Bullet000NormBase.E_InitParasAttr.BulletLane : lane,
+		Bullet000NormBase.E_InitParasAttr.Position : bullets.to_local(global_position),
+	}
+	bullet.init_bullet(bullet_paras)
+	bullets.add_child(bullet)
+
+## Pole vaulter / pogo stop (unique to Fortness for now)
+>>>>>>> Stashed changes
 func _on_area_2d_stop_jump_area_entered(area: Area2D) -> void:
 	var zombie: Zombie000Base = area.owner
 	if zombie.lane == lane and zombie.is_trigger_tall_nut_stop_jump:
 		zombie.jump_be_stop(self)
+<<<<<<< Updated upstream
 ## 被压扁(僵尸开车碾压/伽刚特尔拍扁)时,堡垒坚果不会被压扁
 ## 而是把攻击者击退一格(往僵尸方向,即远离房子的方向)
 ## [character] 发动"压扁"攻击的角色(僵尸开的车、伽刚特尔等)
@@ -66,3 +105,5 @@ func _knockback_zombie_one_cell(zombie: Zombie000Base):
 			if is_instance_valid(zombie):
 				zombie.move_component.update_move_factor(false, MoveComponent.E_MoveFactor.IsAttack)
 	)
+=======
+>>>>>>> Stashed changes
